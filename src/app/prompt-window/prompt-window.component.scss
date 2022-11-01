@@ -1,0 +1,29 @@
+h1{
+    top: 50px;
+    text-align: center;
+    color: rgb(120, 9, 9);
+}
+.prompt-window{
+    border: 1px solid rgb(49, 214, 255);
+    grid-column: span 2;
+    grid-row: 1;
+}
+
+.prompt-window{
+    height: 100%;
+    border: 1px solid rgb(246, 175, 23);
+}
+.prompt-form{
+    margin-top: 5rem;
+    margin-left: 1rem;
+    display: grid;
+}
+.prompt-label{
+    color:White;
+}
+.prompt-txtbox{
+    width: 80%;
+}
+.prompt-btn{
+    width: 100px;
+}

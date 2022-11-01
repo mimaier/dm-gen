@@ -1,0 +1,5 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<main [@trigger]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+</main>

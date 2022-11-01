@@ -1,0 +1,47 @@
+@import "../../styles.scss";
+
+.sidebar_main{
+    background-color: $body-color-temp;
+    position: fixed;
+    left: 0;
+    margin-top: 100px;
+    height:90%;
+    width: 120px;
+    margin-bottom: 0;
+    overflow-y: scroll;
+}
+.sidebar_btn{
+    top: 0;
+    margin-top: 0px;
+    color: $body-color-temp;
+    min-height: 180px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar_txt{
+    text-align: center;
+    background-color: $body-color-1;
+    width: 100%;
+    padding-bottom: 5px;
+    margin: 0;
+    bottom: 0;
+    font-weight: 400;
+    border-bottom: 5px solid $text-color-red;
+
+}
+
+.sidebar_img{
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}

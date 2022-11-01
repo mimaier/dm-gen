@@ -1,0 +1,40 @@
+$body-color-temp: #e7e7db;
+
+$body-color-1: #383838;
+$body-color-2: #2b2b2b;
+$body-color-3: #141414;
+$text-main-color: #ffff;
+$text-secondary-color: #ffff;
+$text-color-red: #971927;
+
+$body-color-logo: #971927;
+$body-color-logo-darker: #66111b;
+
+
+
+
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: dnd_fancy;
+    src: url("./assets/fonts/Quicksand-VariableFont_wght.ttf");
+}
+
+
+
+a:link { text-decoration: none; }
+ul { list-style-type: none; }
+
+
+
+body {
+    margin: 0 auto;
+    max-width: 1440px;
+    background-color: $body-color-3;
+    font-family: dnd_fancy;
+
+}
+
+
+
+/*---------------------------------------*/
+

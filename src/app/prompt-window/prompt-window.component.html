@@ -1,0 +1,8 @@
+<div class="prompt-window">
+    <form class="prompt-form" #props="ngForm" (ngSubmit)="sendToApi(txtprop)">
+        <h1>{{pageTitle}}</h1>
+        <label class="prompt-label">Stable Diffusion Prompt</label>
+        <input type="text" class="prompt-txtbox" name="prompttxtbox" ngModel #txtprop>
+        <button class="prompt-btn">Generate</button>
+    </form>
+</div>
