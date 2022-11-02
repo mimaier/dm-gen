@@ -42,12 +42,13 @@
   }
 .header_logo{
     height: 80px;
-    width: 80px;
+    width: 170px;
     
 }
 
 .logo_text{
-    width: 150px;
+    font-size: 1.5rem;
+    width: 250px;
     margin-left: 15px;
     color: $body-color-logo;
     font-weight: bold;
