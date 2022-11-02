@@ -1,5 +1,26 @@
+@import "../../styles.scss";
+
 .image-window{
-    border: 1px solid rgb(203, 46, 247);
-    grid-column:span 2;
-    grid-row: span 3;
+    border: 5px solid $body-color-logo;
+    background-color: $body-color-temp;
+    border-radius: 10px;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    background-image: url("../../assets/img/module_bg_opaque2.png");
+    background-position: center;
+    margin: 0 auto;
+
+    .prompt-image {
+        margin-top: 24px;
+    }
+    .download-button-main{
+        display: flex;
+        justify-content: center;
+    }
+
+    .download-btn {
+        @include standardButton();
+    }
 }
+

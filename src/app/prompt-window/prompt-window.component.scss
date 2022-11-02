@@ -1,29 +1,56 @@
+@import "../../styles.scss";
 h1{
     top: 50px;
     text-align: center;
     color: rgb(120, 9, 9);
 }
 .prompt-window{
-    border: 1px solid rgb(49, 214, 255);
-    grid-column: span 2;
-    grid-row: 1;
+    border: 5px solid $body-color-logo;
+    background-color: $body-color-temp;
+    background-image: url("../../assets/img/module_bg_opaque.png");
+    border-radius: 10px;
+    background-position: center;
 }
 
 .prompt-window{
     height: 100%;
-    border: 1px solid rgb(246, 175, 23);
 }
 .prompt-form{
-    margin-top: 5rem;
-    margin-left: 1rem;
+    margin: 0 auto;
+    margin-left: 30px;
+    margin-right: 30px;
+    max-width: 1920px;
     display: grid;
 }
 .prompt-label{
-    color:White;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 18px;
+    color:black;
 }
 .prompt-txtbox{
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: $body-color-logo-darker;
+    background-color: #eeeee7;
+    border: 2px solid $text-color-red;
+    border-radius: 28px;
+    padding: 16px;
     width: 80%;
+    transition: 1ms;
+    &:hover {
+        background-image: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));
+        
+    }
+    &::placeholder {
+        color: #b5b5ac;
+    }
 }
 .prompt-btn{
-    width: 100px;
+    @include standardButtonSmall();
+
+
+
 }

@@ -1,5 +1,10 @@
+@import "../../styles.scss";
+
 .ticker-window{ 
-    border: 1px solid rgb(23, 241, 85);
-    grid-column:span 2;
-    grid-row: span 2;
+    background-color: $body-color-temp;
+    border: 5px solid $body-color-logo;
+    border-radius: 10px;
+    height: 100%;
+    background-image: url("../../assets/img/module_bg_opaque2.png");
+    background-position: center;
 }
