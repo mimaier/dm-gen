@@ -24,7 +24,6 @@ h1{
 }
 .prompt-label{
     margin: 0 auto;
-    margin-top: 20px;
     font-size: 18px;
     color:black;
 }
@@ -50,7 +49,4 @@ h1{
 }
 .prompt-btn{
     @include standardButtonSmall();
-
-
-
 }

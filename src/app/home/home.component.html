@@ -1,6 +1,40 @@
 
 <div class="mainWindow">
-    <h1 style="color: red;">- Currently under construction -</h1>
-
-    <h1>HOME</h1>
+   <div class="card-window"  >
+        <div class="character-card card "  >
+            <div class="image-container" (click)="goBackToPage('characters')">
+                <img src="../../assets/img/characters/character_logo_crop.png" class="card-img">
+                <p class="card_txt">Generate Characters</p>
+            </div>
+        </div>
+        <div class="character-card card"  >
+            <div class="image-container" (click)="goBackToPage('landscapes')">
+                <img src="../../assets/img/landscapes/rolling_hills_crop.png" class="card-img">
+                <p class="card_txt">Generate Landscapes</p>
+            </div>
+        </div>
+        <div class="character-card card" >
+            <div class="image-container" (click)="goBackToPage('towns')">
+                <img src="../../assets/img/towns/town_crop.png" class="card-img">
+                <p class="card_txt">Generate Towns</p>
+            </div>
+        </div>
+        <div class="character-card card" >
+            <div class="image-container" (click)="goBackToPage('items')">
+                <img src="../../assets/img/items/magic_sword_crop2.png" class="card-img">
+                <p class="card_txt">Generate Items</p>
+            </div>
+        </div>
+   </div>   
+   <div class="sample-window">
+    <div class="random-image-card">
+        <img src="../../assets/img/random/nomad.jpg" class="card-img">
+    </div>
+    <div class="random-image-card">
+        <img src="../../assets/img/random/oldtown.jpg" class="card-img">
+    </div>
+    <div class="random-image-card">
+        <img src="../../assets/img/random/wizardhat.jpg" class="card-img">
+    </div>
+   </div>  
 </div>

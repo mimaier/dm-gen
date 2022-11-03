@@ -13,9 +13,15 @@
                 </a>
             </li>  
             -->
-            <img src="../../assets/img/logo_main_crop3_2_fullrot.png" class="header_logo">
+            <img (click)="goBackToPage('home')" src="../../assets/img/logo_new.png" class="header_logo">
             <!--<div class="vl"></div>-->
-            <p class="logo_text">Generate your Imagination to life!</p>
+            <!--<p class="logo_text">Generate your Imagination to life!</p>-->
+            <div class="button-div">
+                <button class="login-btn" >Sign In</button>
+                <button class="register-btn" (click)="goBackToPage('sign-up')">Free Sign Up</button>
+            </div>  
+            
+
         </ul>
     </nav> 
 </header>

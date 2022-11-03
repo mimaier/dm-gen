@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgxSpinnerModule } from "ngx-spinner";
 
 import { BrowserModule } from '@angular/platform-browser';
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { PromptWindowComponent } from './prompt-window/prompt-window.component';
 import { TriggerWindowComponent } from './trigger-window/trigger-window.component';
 import { ImageWindowComponent } from './image-window/image-window.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 interface NgxSpinnerConfig {
   type?: string;
@@ -38,12 +40,14 @@ interface NgxSpinnerConfig {
     PromptWindowComponent,
     TriggerWindowComponent,
     ImageWindowComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' })
+    NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
+    SocialLoginModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

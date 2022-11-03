@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-sign-up',
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.scss']
 })
-export class HomeComponent implements OnInit {
-
+export class SignUpComponent implements OnInit {
+  
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -15,4 +15,5 @@ export class HomeComponent implements OnInit {
   goBackToPage(pageName : string){
     this.router.navigate([`${pageName}`]);
   }
+
 }

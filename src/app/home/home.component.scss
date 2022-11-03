@@ -1,14 +1,91 @@
+@import "../../styles.scss";
+
 .mainWindow{
     position: fixed;
     left: 120px;
     top: 100px;
     width: 94%;
-    height: 90%;
-    border: 1px solid #ffff;
-    
+    height: 90%;    
     h1{
         top: 200px;
         text-align: center;
         color: red;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-window {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+
+    .card{
+        
+
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .card-img{
+            cursor: pointer;
+            border-radius: 10px;
+
+            width: 235px;
+            height: 300px;
+            -moz-box-shadow: 3px 3px 3px  rgb(0, 0, 0);
+            -webkit-box-shadow: 3px 3px 3px  rgb(7, 7, 7);
+            box-shadow: 3px 3px 3px rgb(0, 0, 0);
+        }
+
+        .card_txt{
+            cursor: pointer;
+            border-radius: 10px;
+            text-align: center;
+            height: 30px;
+            
+            width: 100%;
+            padding-top: 10px;
+            margin: 0;
+            bottom: 0;
+            font-weight: 400;
+            border-bottom: 5px solid $text-color-red;
+            font-weight: bold;
+            background: 
+            url("../../assets/img/category-card-bg.png") center top;
+            background-size: cover;
+        }
+    }
+
+    
+}
+
+
+
+.sample-window{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+
+    .random-image-card{
+               display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .card-img{  
+            border: 0px solid $text-color-red;
+            border-radius: 10px;
+            width: 350px;
+            height: 350px;
+
+            -moz-box-shadow: 3px 3px 3px  rgb(0, 0, 0);
+            -webkit-box-shadow: 3px 3px 3px  rgb(7, 7, 7);
+            box-shadow: 3px 3px 3px rgb(0, 0, 0);
+        }
     }
 }
