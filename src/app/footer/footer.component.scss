@@ -1,0 +1,16 @@
+@import "../../styles.scss";
+
+footer {
+
+    #footer-content {
+
+        background-color: $body-color-temp;
+        margin: 0;
+
+        li {
+            display: inline;
+            padding: 0 16px 0 16px;
+        }
+
+    }
+}

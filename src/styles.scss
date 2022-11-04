@@ -10,10 +10,6 @@ $text-color-red: #971927;
 $body-color-logo: #971927;
 $body-color-logo-darker: #66111b;
 
-
-
-
-/* You can add global styles to this file, and also import other style files */
 @font-face {
     font-family: dnd_fancy;
     src: url("./assets/fonts/Quicksand-VariableFont_wght.ttf");
@@ -37,7 +33,6 @@ $body-color-logo-darker: #66111b;
     }
 }
 
-
 @mixin standardButtonSmall() {
     width: 140px;
     height: 30px;
@@ -54,20 +49,29 @@ $body-color-logo-darker: #66111b;
         background-image: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));
     }
 }
-a:link { text-decoration: none; }
-ul { list-style-type: none; }
 
+a:link { 
+    text-decoration: none; 
+    color: unset;
+}
 
+ul { 
+    list-style-type: none; 
+}
 
 body {
     margin: 0 auto;
-    max-width: 1440px;
     background-color: $body-color-2;
     font-family: dnd_fancy;
-
 }
 
+app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
 
-
-/*---------------------------------------*/
-
+main {
+    flex: 1; 
+}
