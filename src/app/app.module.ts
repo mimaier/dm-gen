@@ -22,7 +22,6 @@ import { TriggerWindowComponent } from './trigger-window/trigger-window.componen
 import { ImageWindowComponent } from './image-window/image-window.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FooterComponent } from './footer/footer.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 interface NgxSpinnerConfig {
   type?: string;
@@ -51,7 +50,6 @@ interface NgxSpinnerConfig {
     FormsModule,
     NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
     SocialLoginModule,
-    FontAwesomeModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
