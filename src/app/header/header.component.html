@@ -1,39 +1,11 @@
 <header>
 
-    <div class="sidebar hide">
-        <div class="sidebar_main">
-            <a href="/characters" class="sidebar_btn sidebar_btn_characters">
-                <img src="../../assets/img/characters/character_logo_crop.png" class="sidebar_img">
-                <p class="sidebar_txt">Characters</p>
-            </a>
-
-            <div class="line"></div>
-
-            <a href="/landscapes" class="sidebar_btn sidebar_btn_landscapes">
-                <img src="../../assets/img/landscapes/rolling_hills_crop.png" class="sidebar_img">
-                <p class="sidebar_txt">Landscapes</p>
-            </a>
-
-            <div class="line"></div>
-
-            <a href="/towns" class="sidebar_btn sidebar_btn_towns">
-                <img src="../../assets/img/towns/town_crop.png" class="sidebar_img">
-                <p class="sidebar_txt">Towns</p>
-            </a>
-
-            <div class="line"></div>
-
-            <a href="/items" class="sidebar_btn sidebar_btn_items">
-                <img src="../../assets/img/items/magic_sword_crop2.png" class="sidebar_img">
-                <p class="sidebar_txt">Items</p>
-            </a>
-        </div>
-    </div>
+    <app-sidebar id="nav-sidebar"></app-sidebar>
 
     <nav class="nav">
         <ul class="menu-nav">
             <div class="sidebar-burger-button">
-                <div class="burger-button">
+                <div class="burger-button" (click)="switchSidebar()">
                     <svg viewBox="0 0 100 80" width="40" height="40">
                         <rect width="100" height="20" rx="10"></rect>
                         <rect y="30" width="100" height="20" rx="10"></rect>

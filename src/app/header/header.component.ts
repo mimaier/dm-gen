@@ -16,9 +16,20 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     
   }
-  goBackToPage(pageName : string){
+  goBackToPage(pageName : string) {
     this.router.navigate([`${pageName}`]);
   }
+
+  switchSidebar() {
+    const sidebar = document.getElementById('nav-sidebar') as HTMLInputElement;
+    
+    if(sidebar.style.visibility === "hidden") {
+      sidebar.style.visibility = "initial";
+    }else {
+      sidebar.style.visibility = "hidden";
+    }
+  }
+
 /*
   signUserIn(pageName : string){
     console.log("YESTH");
