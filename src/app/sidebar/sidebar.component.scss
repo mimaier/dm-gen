@@ -1,29 +1,79 @@
 @import "../../styles.scss";
 
-.sidebar_main{
+.sidebar {
     position: fixed;
-    margin-top: 100px;
-    height: 100%;
     width: 100px;
-    overflow-y: scroll;
-    background-color: rgba(128, 128, 128, 0.25);
-    
-}
-.sidebar_btn{
-    color: $body-color-temp;
-    min-height: 180px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    border-right: 3px solid $body-color-logo;
-}
+    height: 100%;
 
-.sidebar_img{
-    object-fit: cover;
-    width: 100%;
-}
+    .sidebar-burger-button {
+        display: flex;
+        border-right: 3px solid $body-color-logo;
 
-::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* make scrollbar transparent */
+        .burger-button {
+            justify-self: left;
+
+            border-radius: 100px;
+            background-color: rgba(128, 128, 128, 0.1);
+
+            svg {
+                height: 50px;
+                width: 50px;
+
+                rect {
+                    fill: $body-color-logo;
+                }
+            }
+
+            &:hover {
+                background-color: rgba(128, 128, 128, 0.5);
+
+                .hide {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .sidebar_main {
+        position: fixed;
+        width: 100px;
+        overflow-y: scroll;
+        margin: 0;
+        border-right: 3px solid $body-color-logo;
+        z-index: -1;
+        display: initial;
+
+        .line {
+            margin: 0 auto;
+            border-top: 1px solid gray;
+            margin: 5px;
+        }
+
+        .sidebar_btn {
+            color: $body-color-temp;
+            min-height: 180px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
+            .sidebar_img {
+                object-fit: cover;
+                width: 100%;
+            }
+
+            .sidebar_txt {
+                color: $body-color-temp;
+            }
+
+        }
+
+
+    }
+
+    ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+        /* make scrollbar transparent */
+    }
+
 }
