@@ -1,6 +1,6 @@
 @import "../../styles.scss";
 
-.nav{
+.nav {
     background-color: $body-color-temp;
     width: 100vw;
     position: fixed;
@@ -9,51 +9,63 @@
     top: 0;
     left: 0;
     height: 85px;
-    
 }
-.menu-nav{
-    margin:0;
+
+.menu-nav {
+    margin: 0;
     width: 100%;
     display: flex;
+    gap: 20px;
     flex-direction: row;
     padding: 10px;
-    border-bottom: 3px solid $body-color-logo; 
+    border-bottom: 3px solid $body-color-logo;
     align-items: center;
-    background: 
-    url("../../assets/img/header_banner_fin_windmill.png") center top;
+    background:
+        url("../../assets/img/header_banner_fin_windmill.png") center top;
     background-size: cover;
-}
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    .menu-nav{
-    background-image: none !important;
+
+    @media only screen and (max-width: $mobile-screen) {
+        & {
+            background-image: none !important;
+        }
     }
-  }
+}
+
+
 
 .title p {
     color: rgb(165, 100, 65);
     font-size: 32px;
     font-family: dnd_fancy;
 }
+
 .vl {
     margin-left: 10px;
     border-left: 6px solid $body-color-logo;
     height: 100%;
-  }
-.header_logo{
-    height: 120px;
-    width: 340px;
-    cursor: pointer;
 }
 
-.logo_text{
+.header_logo {
+    width: 300px;
+    cursor: pointer;
+
+    @media only screen and (max-width: $smaller-screen) {
+        & {
+            width: 220px;
+        }
+    }
+
+}
+
+.logo_text {
     font-size: 1.5rem;
     width: 250px;
     margin-left: 15px;
     color: $body-color-logo;
     font-weight: bold;
 }
-.maintenance_text{
+
+.maintenance_text {
     width: 250px;
     margin-left: 95px;
     color: $body-color-logo;
@@ -61,18 +73,97 @@
     font-size: 1rem;
 }
 
-.login-btn{
+
+.login-btn {
     @include standardButtonSmall();
-    width: 70px;
-    
 }
-.register-btn{
+.register-btn {
     @include standardButtonSmall();
+}
+@media only screen and (max-width: 530px) {
+    .login-btn, .register-btn {
+        display: none;
+    }
+}
+
+.sidebar-burger-button {
+
+    .burger-button {
+        border-radius: 100px;
+        margin: 10px;
+        padding: 10px;
+
+        svg {
+            height: 36px;
+            width: 36px;
+
+            rect {
+                fill: $body-color-logo;
+            }
+        }
+
+        &:hover {
+            background-color: rgba(128, 128, 128, 0.5);
+        }
+    }
+}
+
+// ! enable / disable navigation !
+
+.hide {
+    display: none;
+}
+
+.sidebar {
+    position: fixed;
     width: 100px;
-    margin-left: 5px;
-}
-.button-div{
-    margin-left: 20px;
-    width: 20%;
-    
+    height: 100%;
+    z-index: 10;
+    margin-top: 120px;
+
+    .sidebar_main {
+        position: fixed;
+        width: 100px;
+        overflow-y: scroll;
+        margin: 0;
+        border-right: 3px solid $body-color-logo;
+        z-index: -1;
+        display: initial;
+
+        .line {
+            margin: 0 auto;
+            border-top: 1px solid gray;
+            margin: 5px;
+        }
+
+        .sidebar_btn {
+            color: $body-color-temp;
+            min-height: 180px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
+            .sidebar_img {
+                object-fit: cover;
+                width: 100%;
+            }
+
+            .sidebar_txt {
+                color: $body-color-temp;
+                margin: 0;
+                padding-top: 4px;
+                text-align: center;
+            }
+
+        }
+
+
+    }
+
+    ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+        /* make scrollbar transparent */
+    }
+
 }
