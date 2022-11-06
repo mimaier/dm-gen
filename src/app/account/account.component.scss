@@ -1,0 +1,55 @@
+@import "../../styles.scss";
+
+.main-window{
+    background-color: $account-color-temp;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.image-window{
+    grid-column: 1;
+    background-image: url("../../assets/img/account_banner.png");
+}
+
+.text-window{
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .logo{
+        height: 200px;
+        width: 600px;
+        margin: 0 auto;
+    }
+
+    .sign-up-buttons{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        
+    }
+    .btn{
+        @include standardButtonSmall();
+
+    }
+
+    .sign-up-back-btn{
+        margin-top: 0%;
+    }
+
+    .sign-up-form{
+        display:flex;
+        flex-direction: column;
+    }
+}

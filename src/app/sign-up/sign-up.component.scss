@@ -1,7 +1,7 @@
 @import "../../styles.scss";
 
 .main-window{
-    background-color: $body-color-temp;
+    background-color: $body-color-signup;
     position: fixed;
     left: 0;
     top: 0;
@@ -10,12 +10,62 @@
     z-index: 999;
 
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 2fr 3fr;
 }
 
+.sign-in-txtbox{
+    @include textBoxMedium();
+}
+.sign-up-txtbox{
+    @include textBoxMedium();
+    background-color: $textbox-color-temp;
+}
 .image-window{
     grid-column: 1;
-    background-image: url("../../assets/img/sign_up_banner_crop.png");
+    background-image: url("../../assets/img/sign_up_banner.png");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    
+    .text-background{
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 40px;
+        background-color: #343434af;
+        border-radius: 10px;
+    }
+
+    h2{
+       font-size: 3.5em; 
+       font-weight: bold;
+       color: $textbox-color-parchment;
+    }
+
+    .sign-up-buttons{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        
+    }
+    .btn{
+        @include standardButtonSmall();
+        
+    }
+
+
+
+    .sign-up-form{
+        display:flex;
+        flex-direction: column;
+        
+        .sign-up-success{
+            visibility:hidden;
+        }
+    }
 }
 
 .text-window{
@@ -25,10 +75,26 @@
     justify-content: center;
     align-items: center;
 
+    .text-background{
+        //border: 3px solid #810b0b3c;
+        //background-image: url("../../assets/img/module_bg_clean_crop.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        
+        padding-bottom: 3%;
+        border-radius: 10px;
+    }
+    h2{ 
+        font-size: 3.5em; 
+        font-weight: bold;
+        color: rgb(70, 7, 7);
+     }
     .logo{
         height: 200px;
         width: 600px;
         margin: 0 auto;
+        position: fixed !important;
+        top: 0;
     }
 
     .sign-up-buttons{
@@ -45,6 +111,38 @@
     }
 
     .sign-up-back-btn{
-        margin-top: 20%;
+        @include standardButton();
     }
+
+   
+} 
+.sign-up-form{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+    .sign-up-success{
+        visibility:hidden;
+    }
+}
+.sign-in-form{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+    .sign-in-success{
+        visibility:hidden;
+    }
+}
+.sign-up-label{
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    
+}
+.sign-in-label{
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+
 }

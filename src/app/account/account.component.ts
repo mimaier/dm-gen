@@ -3,20 +3,27 @@ import { Router } from '@angular/router';
 import {UsersService} from '../users.service';
 
 @Component({
-  selector: 'app-sign-up',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.scss']
+  selector: 'app-account',
+  templateUrl: './account.component.html',
+  styleUrls: ['./account.component.scss']
 })
-export class SignUpComponent implements OnInit {
+export class AccountComponent implements OnInit {
   data:any;
-  constructor(private router: Router, private user: UsersService) { }
+  constructor(private router: Router, private user: UsersService) { 
+    
+  }
 
   ngOnInit(): void {
   }
-  goBackToPage(pageName : string){
-    this.router.navigate([`${pageName}`]);
+
+  ngAfterViewInit(): void {
+    const greeting = document.getElementById('greeting') as HTMLInputElement;
+    greeting.innerHTML = 'Hello ' + localStorage.getItem('username');
+    
+
+    
   }
-  navigateToPage(pageName : string){
+  goBackToPage(pageName : string){
     this.router.navigate([`${pageName}`]);
   }
 
@@ -36,24 +43,15 @@ export class SignUpComponent implements OnInit {
       logoutButton.style.display = "block";
       registerButton.style.display = "none";
 
-      const signInSuccessLabel = document.getElementById('sign-in-success') as HTMLInputElement;
-      signInSuccessLabel.style.visibility = "visible";
-      this.navigateToPage('/');
     })
   }
 
   registerUser(username:string, password:string, email:string){
 
     this.user.registerUser(username, password, email).subscribe(data=>{
+
       this.data = Object.values (data);
       console.log(this.data)
-
-      const signUpSuccessLabel = document.getElementById('sign-up-success') as HTMLInputElement;
-      console.log(signUpSuccessLabel);
-      signUpSuccessLabel.style.visibility = "visible";
-
-      this.loginUser(email, password);
-
     })
   }
 

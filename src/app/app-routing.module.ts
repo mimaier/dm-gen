@@ -8,6 +8,7 @@ import { CreaturesComponent } from './creatures/creatures.component'
 import { TownsComponent } from './towns/towns.component'
 import { ItemsComponent } from './items/items.component'
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { AccountComponent } from './account/account.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: {}},
@@ -18,6 +19,8 @@ const routes: Routes = [
   { path: 'towns', component: TownsComponent, data: {}},
   { path: 'items', component: ItemsComponent, data: {}},
   { path: 'sign-up', component: SignUpComponent, data: {}},
+  { path: 'account', component: AccountComponent, data: {}},
+
   
 
 ];

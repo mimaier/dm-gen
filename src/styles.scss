@@ -47,8 +47,14 @@ table {
 */
 
 /* ------------------------------------------- */
+$body-color-signup:#e7e7db;
 
 $body-color-temp: #e7e7db;
+$textbox-color-temp: #f8f8f2;
+$textbox-color-parchment: #ebe7d2;
+
+$account-color-temp: rgb(234, 240, 251);
+
 $body-color-1: #383838;
 $body-color-2: #2b2b2b;
 $body-color-3: #141414;
@@ -67,17 +73,21 @@ $mobile-screen: 500px;
 /* ------------------------------------------- */
 
 @font-face {
-    font-family: dnd_fancy;
+    font-family: dnd_fancy2;
     src: url("./assets/fonts/Quicksand-VariableFont_wght.ttf");
+}
+@font-face {
+    font-family: dnd_fancy;
+    src: url("./assets/fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf");
 }
 
 @mixin standardButton() {
     width: 200px;
-    height: 50px;
-    font-size: 16px;
+    height: 35px;
+    font-size: 14px;
     font-weight: bold;
     color: $body-color-logo-darker;
-    background-color: #eeeee7;
+    background-color: $textbox-color-parchment;
     border: 2px solid $text-color-red;
     border-radius: 28px;
     transition: 1ms;
@@ -94,7 +104,7 @@ $mobile-screen: 500px;
     font-size: 12px;
     font-weight: bold;
     color: $body-color-logo-darker;
-    background-color: #eeeee7;
+    background-color: $textbox-color-parchment;
     border: 2px solid $text-color-red;
     border-radius: 28px;
     transition: 1ms;
@@ -102,6 +112,47 @@ $mobile-screen: 500px;
     &:hover {
         background-image: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));
     }
+}
+
+@mixin textBoxMedium(){
+    margin: 0 auto;
+        font-size: 1rem;
+        color: $body-color-logo-darker;
+        background-color: $textbox-color-temp;
+        border: 2px solid $text-color-red;
+        border-radius: 28px;
+        padding: 10px;
+        width: 90%;
+        transition: 1ms;
+        text-align: center;
+        &:hover {
+            background-image: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));    
+        }
+        &::placeholder {
+            color: #b5b5ac;
+            text-align: center;
+        }
+}
+
+@mixin textBoxBig(){
+    margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 20px;
+        color: $body-color-logo-darker;
+        background-color: #eeeee7;
+        border: 2px solid $text-color-red;
+        border-radius: 28px;
+        padding: 16px;
+        width: 80%;
+        transition: 1ms;
+        &:hover {
+            background-image: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));
+            
+        }
+        &::placeholder {
+            color: #b5b5ac;
+        }
 }
 
 /* ------------------------------------------- */

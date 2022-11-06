@@ -1,41 +1,50 @@
+<meta name="google-signin-scope" content="profile email">
+<meta name="google-signin-client_id" content="267252698889-ot7op90dnd15ga3hot4uq8bcc0micfkb.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js"></script>
+
 <div class="main-window">
-    <div class="image-window"></div>
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="267252698889-ot7op90dnd15ga3hot4uq8bcc0micfkb.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js"></script>
+
+    <div class="image-window">
+        <div class="text-background">
+            <h2>Register for Free</h2>
+            <div class="sign-up-buttons">
+                <form class="sign-up-form" #props="ngForm" (ngSubmit)="registerUser(usernameprop.value, passwordprop.value, emailprop.value)">
+                  <label class="sign-up-label">Username </label>
+                  <input type="text" class="sign-up-txtbox username_textbox" placeholder="JohnDough69" name="username_textbox" ngModel #usernameprop>
+                  <br>
+                  <label class="sign-up-label">Password </label>
+                  <input type="password" class="sign-up-txtbox password_textbox" placeholder="*********" name="password_textbox" ngModel #passwordprop>
+                  <br>
+                  <label class="sign-up-label">Email </label>
+                  <input type="text" class="sign-up-txtbox email_textbox" placeholder="john@dough.at" name="email_textbox" ngModel #emailprop>
+                  <br><br><br>
+                  <button class="sign-up-btn btn">Sign Up</button>
+                  <label class="sign-up-success" id="sign-up-success">Successfully signed up! </label>
+                </form>           
+            </div>
+        </div>       
+    </div>
 
 
     <div class="text-window">
         <img src="../../assets/img/logo_new.png" class="logo">
-        <h1>Create Account</h1>
-        <div class="sign-up-buttons">
-             <!-- NOT WORKING-->   
-            <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-            <script>
-              function onSignIn(googleUser) {
-                // Useful data for your client-side scripts:
-                var profile = googleUser.getBasicProfile();
-                console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-                console.log("Name: " + profile.getName());
-                console.log("Image URL: " + profile.getImageUrl());
-                console.log("Email: " + profile.getEmail());
-        
-                // The ID token you need to pass to your backend:
-                var id_token = googleUser.getAuthResponse().id_token;
-                console.log("ID Token: " + id_token);
-              };
-            </script>
-
-          
-
-            <button class="sign-up-google-btn btn">Sign up with Google</button>
-            <button class="sign-up-apple-btn btn">Sign up with Apple</button>
-       
-           
+        <div class="text-background">
+            <h2>Login to your Account</h2>
+            <div class="sign-up-buttons">
+            <form class="sign-in-form" #props="ngForm" (ngSubmit)="loginUser(emailpropsignin.value, passwordpropsignin.value)">
+                <label class="sign-in-label">Email </label>
+                <input type="text" class="sign-in-txtbox email_textbox" placeholder="john@dough.at" name="sign-in-txtbox-email" ngModel #emailpropsignin>
+                <br>
+                <label class="sign-in-label">Password </label>
+                <input type="password" class="sign-in-txtbox password_textbox" placeholder="*********" name="sign-in-txtbox-password" ngModel #passwordpropsignin>
+                <br>   <br>       
+                <button class="sign-in-btn btn">Sign in</button>
+                <label class="sign-in-success" id="sign-in-success">Successfully signed in! </label>
+            </form>
+            </div>
         </div>
-        <button class="sign-up-back-btn btn" (click)="goBackToPage('home')" >Get back</button>
-        
-
+        <br><br>
+        <button class="sign-up-back-btn" (click)="goBackToPage('home')" >Get back</button>
     </div>
-    
+
 </div>
