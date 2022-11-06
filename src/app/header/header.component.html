@@ -20,12 +20,13 @@
                 </a>
             </li>  
             -->
-            <img (click)="goBackToPage('home')" src="../../assets/img/logo_new.png" class="header_logo">
+            <img (click)="navigateToPage('/')" src="../../assets/img/logo_new.png" class="header_logo">
 
             <!--<div class="vl"></div>-->
             <!--<p class="logo_text">Generate your Imagination to life!</p>-->
-            <button class="login-btn">Sign In</button>
-            <button class="register-btn" (click)="goBackToPage('sign-up')">Free Sign Up</button>
+            <button class="account-btn" id="accountbtn" (click)="navigateToPage('/account')">Your Account</button>
+            <button class="logout-btn" id="logoutbtn" (click)="logoutUser()">Logout</button>
+            <button class="register-btn" id="registerbutton" (click)="navigateToPage('/sign-up')">Sign-up or Login</button>
         </ul>
     </nav>
 

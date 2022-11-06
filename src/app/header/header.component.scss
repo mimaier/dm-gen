@@ -62,8 +62,15 @@
 }
 
 
-.login-btn {
+
+.account-btn {
     @include standardButtonSmall();
+    display: none;
+}
+
+.logout-btn {
+    @include standardButtonSmall();
+    display: none;
 }
 .register-btn {
     @include standardButtonSmall();

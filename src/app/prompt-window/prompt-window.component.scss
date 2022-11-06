@@ -49,4 +49,5 @@ h1{
 }
 .prompt-btn{
     @include standardButtonSmall();
+    margin: 0 auto;
 }

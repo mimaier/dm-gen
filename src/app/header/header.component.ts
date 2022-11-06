@@ -1,5 +1,6 @@
 import { Component, OnInit , ElementRef} from '@angular/core';
 import { Router } from '@angular/router';
+import {UsersService} from '../users.service';
 
 @Component({
   selector: 'app-header',
@@ -11,14 +12,42 @@ export class HeaderComponent implements OnInit {
   constructor(private ElByClassName: ElementRef, private router: Router) { }
   ngAfterViewInit() {
   
+    const accountButton = document.getElementById('accountbtn') as HTMLInputElement;
+    const logoutButton = document.getElementById('logoutbtn') as HTMLInputElement;
+    const registerButton = document.getElementById('registerbutton') as HTMLInputElement;
+
+    if(localStorage.getItem('token') != null){
+      accountButton.style.display = "block";
+      logoutButton.style.display = "block";
+      registerButton.style.display = "none";
+    }else{
+      accountButton.style.display = "none";
+      logoutButton.style.display = "none";
+      registerButton.style.display = "block";
+    }
   }
   
   ngOnInit(): void {
     
   }
-  goBackToPage(pageName : string) {
+  navigateToPage(pageName : string){
     this.router.navigate([`${pageName}`]);
   }
+
+  logoutUser(){
+    localStorage.removeItem('username');
+    localStorage.removeItem('usermail');
+    localStorage.removeItem('token');
+
+    const accountButton = document.getElementById('accountbtn') as HTMLInputElement;
+    const logoutButton = document.getElementById('logoutbtn') as HTMLInputElement;
+    const registerButton = document.getElementById('registerbutton') as HTMLInputElement;
+
+    console.log(accountButton);
+    accountButton.style.display = "none";
+    logoutButton.style.display = "none";
+    registerButton.style.display = "block";
+}
 
   switchSidebar() {
     const sidebar = document.getElementById('nav-sidebar') as HTMLInputElement;
@@ -32,29 +61,6 @@ export class HeaderComponent implements OnInit {
       burgerBtn.style.backgroundColor = "unset";
     }
   }
-
-/*
-  signUserIn(pageName : string){
-    console.log("YESTH");
-    var mysql = require('mysql');
-    console.log("YESTH1");
-
-    var con = mysql.createConnection({
-      host: "localhost",
-      user: "root",
-      password: "fstehtfürfreunde"
-    });
-    console.log("YESTH2");
-
-    con.connect(function(err : any) {
-      if (err) throw err; 
-      console.log("Connected!");
-    });
-    console.log("YESTH3");
-
-
-  }*/
-
 }
 
 
