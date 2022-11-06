@@ -34,14 +34,14 @@
             flex-direction: column;
             padding: 10px;
             border-radius: 12px;
-            background-color: #30302e9a;
+            background-color: #a5a59e27;
             margin: 10px;
             min-width: 80px;
             
             &:hover {
                 transition: background-color 0.5s ease;
-                background-color: #47474475;
-                background-image: linear-gradient(to right, #ffffff2c, rgba(255, 255, 255, 0));
+                background-color: #52524f52;
+                background-image: linear-gradient(to right, #ffffff54, rgba(255, 255, 255, 0.021));
 
                 .sidebar_img {
                     transition: box-shadow 0.3s ease;
