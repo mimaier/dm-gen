@@ -61,8 +61,6 @@
     font-size: 1rem;
 }
 
-
-
 .account-btn {
     @include standardButtonSmall();
     display: none;
@@ -75,8 +73,9 @@
 .register-btn {
     @include standardButtonSmall();
 }
+//TODO: fails to load
 @media only screen and (max-width: 630px) {
-    .login-btn, .register-btn {
+    .login-btn, .register-btn, .logout-btn, .register-btn, .account-btn {
         display: none;
     }
 }

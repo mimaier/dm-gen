@@ -5,6 +5,9 @@ h1{
     color: rgb(120, 9, 9);
 }
 .prompt-window{
+
+    height: 100%;
+
     border: 5px solid $body-color-logo;
     background-color: $body-color-temp;
     background-image: url("../../assets/img/module_bg_opaque.png");
@@ -12,9 +15,6 @@ h1{
     background-position: center;
 }
 
-.prompt-window{
-    height: 100%;
-}
 .prompt-form{
     margin: 0 auto;
     margin-left: 30px;
