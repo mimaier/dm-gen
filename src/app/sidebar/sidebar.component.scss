@@ -10,9 +10,10 @@
     width: 100px;
     height: 100%;
     z-index: 10;
-    margin-top: 120px;
+    margin-top: 85px;
 
     .sidebar_main {
+        background-color: #e7e7db33;
         position: fixed;
         width: 100px;
         overflow-y: scroll;
@@ -24,25 +25,27 @@
         .line {
             margin: 0 auto;
             border-top: 1px solid gray;
-            margin: 5px;
+            margin: 10px;
         }
 
         .sidebar_btn {
             color: $body-color-temp;
-            min-height: 180px;
             display: flex;
             justify-content: center;
             flex-direction: column;
+            padding: 10px;
+
 
             .sidebar_img {
                 object-fit: cover;
+                border-radius: 26px;
                 width: 100%;
+                min-width: 20px;
             }
 
             .sidebar_txt {
                 color: $body-color-temp;
                 margin: 0;
-                padding-top: 4px;
                 text-align: center;
             }
 
@@ -55,6 +58,26 @@
         width: 0px;
         background: transparent;
         /* make scrollbar transparent */
+    }
+
+    @media only screen and (max-width: $smaller-screen) {
+        & {
+            .sidebar_main {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                border-right: unset;
+
+                .sidebar_btn {
+                    margin: 10px;
+                    border: 1px solid white;
+                }
+
+                .line {
+                    visibility: hidden;
+                }
+            }
+        }
     }
 
 }

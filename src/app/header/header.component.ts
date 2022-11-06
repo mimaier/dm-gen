@@ -22,11 +22,14 @@ export class HeaderComponent implements OnInit {
 
   switchSidebar() {
     const sidebar = document.getElementById('nav-sidebar') as HTMLInputElement;
-    
+    const burgerBtn = document.getElementById('burger-button') as HTMLInputElement;
+
     if(sidebar.style.visibility === "hidden") {
-      sidebar.style.visibility = "initial";
+      sidebar.style.visibility = "unset";
+      burgerBtn.style.backgroundColor = "rgba(160, 160, 154, 0.5)";
     }else {
       sidebar.style.visibility = "hidden";
+      burgerBtn.style.backgroundColor = "unset";
     }
   }
 
