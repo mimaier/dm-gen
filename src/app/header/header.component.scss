@@ -24,11 +24,6 @@
         url("../../assets/img/header_banner_fin_windmill.png") center top;
     background-size: cover;
 
-    @media only screen and (max-width: $mobile-screen) {
-        & {
-            background-image: none !important;
-        }
-    }
 }
 
 
@@ -46,7 +41,7 @@
 }
 
 .header_logo {
-    width: 300px;
+    width: 235px;
     cursor: pointer;
 }
 
@@ -73,7 +68,7 @@
 .register-btn {
     @include standardButtonSmall();
 }
-@media only screen and (max-width: 530px) {
+@media only screen and (max-width: 630px) {
     .login-btn, .register-btn {
         display: none;
     }
@@ -99,5 +94,12 @@
         &:hover {
             border: 1px solid #66111b88;
         }
+
+        @media screen and (max-width: $mobile-screen){
+            &:hover {
+                border: 1px solid transparent;
+            }
+        }
+        
     }
 }

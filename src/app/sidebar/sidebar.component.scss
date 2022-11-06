@@ -1,6 +1,5 @@
 @import "../../styles.scss";
 
-// ! enable / disable navigation !
 .hide {
     display: none;
 }
@@ -15,11 +14,11 @@
     .sidebar_main {
         background-color: #e7e7db33;
         position: fixed;
-        width: 100px;
+        height: 100%;
+        width: 150px;
         overflow-y: scroll;
         margin: 0;
-        border-right: 3px solid $body-color-logo;
-        z-index: -1;
+        border-right: 1px solid $body-color-logo;
         display: initial;
 
         .line {
@@ -34,11 +33,18 @@
             justify-content: center;
             flex-direction: column;
             padding: 10px;
+            border-radius: 20px;
+            background-color: #a8a8a0;
+            margin: 10px;
+            min-width: 80px;
 
+            &:hover {
+                background-color: inherit;
+            }
 
             .sidebar_img {
                 object-fit: cover;
-                border-radius: 26px;
+                border-radius: 20px;
                 width: 100%;
                 min-width: 20px;
             }
@@ -48,10 +54,7 @@
                 margin: 0;
                 text-align: center;
             }
-
         }
-
-
     }
 
     ::-webkit-scrollbar {
@@ -60,18 +63,13 @@
         /* make scrollbar transparent */
     }
 
-    @media only screen and (max-width: $smaller-screen) {
+    @media only screen and (max-width: 690px) {
         & {
             .sidebar_main {
                 display: flex;
                 flex-direction: row;
                 width: 100%;
                 border-right: unset;
-
-                .sidebar_btn {
-                    margin: 10px;
-                    border: 1px solid white;
-                }
 
                 .line {
                     visibility: hidden;
