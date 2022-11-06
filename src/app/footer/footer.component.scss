@@ -4,10 +4,13 @@ footer {
 
     #footer-content {
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         padding: 2px 26px 2px 26px;
         background-color: $body-color-temp;
         margin: 0;
+        position: relative;
+        z-index: 20;
+
         li {
             display: inline;
             padding: 0 16px 0 16px;

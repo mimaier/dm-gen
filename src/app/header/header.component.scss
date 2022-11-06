@@ -17,18 +17,13 @@
     display: flex;
     gap: 20px;
     flex-direction: row;
-    padding: 10px;
+    padding: 0 16px;
     border-bottom: 3px solid $body-color-logo;
     align-items: center;
     background:
         url("../../assets/img/header_banner_fin_windmill.png") center top;
     background-size: cover;
 
-    @media only screen and (max-width: $mobile-screen) {
-        & {
-            background-image: none !important;
-        }
-    }
 }
 
 
@@ -46,15 +41,8 @@
 }
 
 .header_logo {
-    width: 300px;
+    width: 235px;
     cursor: pointer;
-
-    @media only screen and (max-width: $smaller-screen) {
-        & {
-            width: 220px;
-        }
-    }
-
 }
 
 .logo_text {
@@ -80,90 +68,38 @@
 .register-btn {
     @include standardButtonSmall();
 }
-@media only screen and (max-width: 530px) {
+@media only screen and (max-width: 630px) {
     .login-btn, .register-btn {
         display: none;
     }
 }
 
 .sidebar-burger-button {
+    min-width: 50px;
+    min-height: 50px;
+    width: 50px;
+    height: 50px;
+    margin: 0;
 
     .burger-button {
+        height: 48px;
         border-radius: 100px;
-        margin: 10px;
-        padding: 10px;
+        border: 1px solid transparent;
 
         svg {
-            height: 36px;
-            width: 36px;
-
-            rect {
-                fill: $body-color-logo;
-            }
+            padding: 10px;
+            fill: $body-color-logo;
         }
 
         &:hover {
-            background-color: rgba(128, 128, 128, 0.5);
-        }
-    }
-}
-
-// ! enable / disable navigation !
-
-.hide {
-    display: none;
-}
-
-.sidebar {
-    position: fixed;
-    width: 100px;
-    height: 100%;
-    z-index: 10;
-    margin-top: 120px;
-
-    .sidebar_main {
-        position: fixed;
-        width: 100px;
-        overflow-y: scroll;
-        margin: 0;
-        border-right: 3px solid $body-color-logo;
-        z-index: -1;
-        display: initial;
-
-        .line {
-            margin: 0 auto;
-            border-top: 1px solid gray;
-            margin: 5px;
+            border: 1px solid #66111b88;
         }
 
-        .sidebar_btn {
-            color: $body-color-temp;
-            min-height: 180px;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-
-            .sidebar_img {
-                object-fit: cover;
-                width: 100%;
+        @media screen and (max-width: $mobile-screen){
+            &:hover {
+                border: 1px solid transparent;
             }
-
-            .sidebar_txt {
-                color: $body-color-temp;
-                margin: 0;
-                padding-top: 4px;
-                text-align: center;
-            }
-
         }
-
-
+        
     }
-
-    ::-webkit-scrollbar {
-        width: 0px;
-        background: transparent;
-        /* make scrollbar transparent */
-    }
-
 }
