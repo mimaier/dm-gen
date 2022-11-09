@@ -96,6 +96,13 @@ $mobile-screen: 500px;
         background-image: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));
     }
 }
+@mixin transparentScrollbar(){
+    ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+        /* make scrollbar transparent */
+    }
+}
 // maybe rethink this
 @mixin standardButtonSmall() {
     width: 140px;
