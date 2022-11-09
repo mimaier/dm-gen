@@ -29,6 +29,7 @@ export class PromptWindowComponent implements OnInit {
     var resp = await deepai.callStandardApi("fantasy-world-generator", {
             text: promptTxt + this.promptExtender,
     });
+    
 
     const promptImage = document.getElementById('prompt-image') as HTMLInputElement;
     console.log(resp);
