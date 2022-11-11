@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-image-window',
@@ -6,11 +7,43 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./image-window.component.scss']
 })
 export class ImageWindowComponent implements OnInit {
-
-  constructor() { }
+ 
+  @Input() public placeHolderImgPath: string = "";
+  constructor(private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
   }
+
+  upscaleImage(imgprop: any){
+    console.log("HEnlo");
+
+    //this.spinner.show();
+
+    const deepai = require('deepai'); // OR include deepai.min.js as a script tag in your HTML
+    deepai.setApiKey('dea3aaa7-6b55-4af5-862e-1835db355c0c');
+
+    const imageUrl = imgprop.src;
+    console.log(imageUrl);
+
+    (async function() {
+      const upscaleLabel = document.getElementById('upscaleLabel') as HTMLInputElement;
+      upscaleLabel.innerHTML = "currently working ...";
+
+        var resp = await deepai.callStandardApi("torch-srgan", {
+                image: imageUrl,
+        });
+        console.log(resp);
+        const promptImage = document.getElementById('prompt-image') as HTMLInputElement;
+        console.log(resp);
+        console.log(resp.output_url);
+      
+        promptImage.src = resp.output_url;
+
+        upscaleLabel.innerHTML = "Job done!";
+    })()
+   
+  }
+
 
   downloadImage(imgprop: any){
     console.log(imgprop);

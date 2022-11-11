@@ -11,6 +11,7 @@ export class PromptWindowComponent implements OnInit {
 
   @Input() public promptExtender: string = "";
   @Input() public pageTitle: string = "";
+  @Input() public placeHolder: string = "";
 
   constructor(private ElByClassName: ElementRef, private spinner: NgxSpinnerService) { }
 

@@ -1,11 +1,16 @@
 <div class="image-window">
     <form class="prompt-form" #props="ngForm" (ngSubmit)="downloadImage(imgprop)">
         <div class="image-window-preview">
-            <img src="../../assets/img/img_template.png" ngModel #imgprop alt="Generated Image" class="prompt-image" id="prompt-image" >
+            <!--<img src="../../assets/img/img_template.png" ngModel #imgprop alt="Generated Image" class="prompt-image" id="prompt-image" >-->
+            <img src={{placeHolderImgPath}} ngModel #imgprop alt="Generated Image" class="prompt-image" id="prompt-image" >
         </div>
         <div class="download-button-main">
             <button class="download-btn">Open</button>
         </div>
     </form>
+    <div class="upscale-button-main">
+        <button class="upscale-btn"  (click)="upscaleImage(imgprop)">Upscale x4</button>
+        <label class="upscaleLabel" id="upscaleLabel"></label>
+    </div>
 </div>
 

@@ -78,6 +78,17 @@
     .login-btn, .register-btn, .logout-btn, .register-btn, .account-btn {
         display: none;
     }
+    .register-btn{
+        height: 40px;
+        width: 90px;
+    }
+    .header_logo {
+        width: 200px;
+        cursor: pointer;
+    }
+    .menu-nav{
+        gap: 2px;
+    }
 }
 
 .sidebar-burger-button {

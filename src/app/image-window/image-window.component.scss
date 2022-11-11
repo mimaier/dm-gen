@@ -22,9 +22,31 @@
         .prompt-image {
             max-width:600px;
             max-height:600px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px rgb(98, 98, 98);
         }
     }
+    
+    .upscale-button-main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .upscale-btn{
+            margin: 0 auto;            
 
+        }
+        .upscaleLabel{
+            color: $body-color-logo;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            margin: 0 auto;            
+
+        }
+        .upscale-btn {
+            @include standardButton();
+        }
+    }
     .download-button-main{
         display: flex;
         justify-content: center;
@@ -42,6 +64,17 @@
     }
     .prompt-image {
 
+        max-width:90% !important;
+        max-height:90% !important;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .image-window{
+        margin-top: 20px;
+        margin-top: 20px;
+    }
+    .prompt-image {
+        
         max-width:90% !important;
         max-height:90% !important;
     }
