@@ -8,7 +8,10 @@ import { NgxSpinnerService } from "ngx-spinner";
 })
 export class ItemsComponent implements OnInit {
 
-  constructor(private spinner: NgxSpinnerService) { }
+  constructor(private spinner: NgxSpinnerService) { 
+    const sidebarBurgerBtn = document.getElementById('sidebar-burger-button') as HTMLInputElement;
+    sidebarBurgerBtn.style.display = "block";
+  }
 
   ngOnInit(): void {
   }
