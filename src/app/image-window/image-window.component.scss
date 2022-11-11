@@ -3,6 +3,7 @@
 .image-window{
 
     height: 100%;
+    margin-top: 10px;
 
     border: 5px solid $body-color-logo;
     background-color: $body-color-temp;
@@ -13,10 +14,14 @@
     background-position: center;
 
     .image-window-preview {
-
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        justify-content:center;
+        
         .prompt-image {
-            padding: 40px;
-
+            max-width:600px;
+            max-height:600px;
         }
     }
 
@@ -30,5 +35,15 @@
     }
 
 
+}
+@media only screen and (max-width: 700px) {
+    .image-window{
+        margin-top: 20px;
+    }
+    .prompt-image {
+
+        max-width:90% !important;
+        max-height:90% !important;
+    }
 }
 

@@ -42,10 +42,12 @@
     grid-row: 1 / span 3;
   }
 
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: 700px) {
 
     .main-window{
       grid-template-columns: 1fr 1fr 1fr 1fr;
+      width: 92vw;
+      margin: 0 auto; 
     }
 
     ::ng-deep app-prompt-window {
@@ -60,5 +62,7 @@
     ::ng-deep app-image-window {
       grid-column: 1 / span 4;
       grid-row: 3 / span 2 ;
+    }
+    .prompt-window{
     }
 }

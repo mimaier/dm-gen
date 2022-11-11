@@ -7,6 +7,8 @@ h1{
 .prompt-window{
 
     height: 100%;
+    margin-top: 10px;
+
 
     border: 5px solid $body-color-logo;
     background-color: $body-color-temp;
@@ -50,4 +52,15 @@ h1{
 .prompt-btn{
     @include standardButtonSmall();
     margin: 0 auto;
+}
+
+@media only screen and (max-width: 700px) {
+    .prompt-window{
+    margin-top: 20px;
+    }
+    .prompt-txtbox{
+        margin: 0 auto;
+        margin-top: 40px;
+        margin-bottom: 60px;
+    }
 }

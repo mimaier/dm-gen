@@ -3,6 +3,7 @@
 footer {
 
     #footer-content {
+        
         display: flex;
         justify-content: flex-end;
         padding: 2px 26px 2px 26px;
@@ -10,7 +11,7 @@ footer {
         margin: 0;
         position: relative;
         z-index: 20;
-
+        margin-top: 10px;
         li {
             display: inline;
             padding: 0 16px 0 16px;
