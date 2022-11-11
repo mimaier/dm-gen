@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, Input } from '@angular/core';
 import { NgxSpinnerService } from "ngx-spinner";
+const fs = require('fs');
 
 @Component({
   selector: 'app-prompt-window',
@@ -27,7 +28,8 @@ export class PromptWindowComponent implements OnInit {
     console.log(promptTxt + this.promptExtender);
 
     var resp = await deepai.callStandardApi("fantasy-world-generator", {
-            text: promptTxt + this.promptExtender,
+            image: fs.createReadStream('../../assets/img/characters/character_logo.png'),
+            //text: promptTxt + this.promptExtender
     });
     
 
