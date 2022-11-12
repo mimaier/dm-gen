@@ -32,9 +32,11 @@
         flex-direction: column;
         justify-content: center;
         .upscale-btn{
-            margin: 0 auto;            
+            margin: 0 auto; 
 
         }
+        padding-bottom: 30px;           
+
         .upscaleLabel{
             color: $body-color-logo;
             font-weight: bold;
@@ -45,6 +47,10 @@
         }
         .upscale-btn {
             @include standardButton();
+            width: 150px;
+            &:hover {
+                background-image: linear-gradient(to right, #ffffff00, rgba(255, 255, 255, 0));
+            }
         }
     }
     .download-button-main{
@@ -53,6 +59,7 @@
 
         .download-btn {
             @include standardButton();
+            width: 100px;
         }
     }
 

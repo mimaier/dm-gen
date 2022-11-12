@@ -52,7 +52,7 @@ export class SignUpComponent implements OnInit {
       console.log(signUpSuccessLabel);
       signUpSuccessLabel.style.visibility = "visible";
 
-      this.loginUser(email, password);
+     // this.loginUser(email, password);
 
     })
   }
