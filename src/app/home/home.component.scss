@@ -114,7 +114,8 @@
         padding-top: 92px;
 
         .card-window {
-            display: unset;
+            display: unset !important;
+            
         }
         
     }
