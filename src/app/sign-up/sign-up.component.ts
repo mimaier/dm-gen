@@ -19,7 +19,9 @@ export class SignUpComponent implements OnInit {
   navigateToPage(pageName : string){
     this.router.navigate([`${pageName}`]);
   }
-
+  refresh(): void {
+    window.location.reload();
+  }
   loginUser(email:string, password:string){
     this.user.loginUser(email, password).subscribe(data=>{
       this.data = Object.values (data);
@@ -28,6 +30,8 @@ export class SignUpComponent implements OnInit {
       localStorage.setItem('username', this.data[1]);
       localStorage.setItem('usermail', this.data[2]);
       localStorage.setItem('token', this.data[3]);
+      localStorage.setItem('usergenerations', this.data[4]);
+      localStorage.setItem('userfreegenerations', this.data[5]);
       const accountButton = document.getElementById('accountbtn') as HTMLInputElement;
       const logoutButton = document.getElementById('logoutbtn') as HTMLInputElement;
       const registerButton = document.getElementById('registerbutton') as HTMLInputElement;

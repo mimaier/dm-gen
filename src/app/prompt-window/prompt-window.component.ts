@@ -1,5 +1,7 @@
 import { Component, OnInit, ElementRef, Input } from '@angular/core';
 import { NgxSpinnerService } from "ngx-spinner";
+import {UsersService} from '../users.service';
+
 const fs = require('fs');
 
 @Component({
@@ -12,14 +14,25 @@ export class PromptWindowComponent implements OnInit {
   @Input() public promptExtender: string = "";
   @Input() public pageTitle: string = "";
   @Input() public placeHolder: string = "";
+  data:any;
 
-  constructor(private ElByClassName: ElementRef, private spinner: NgxSpinnerService) { }
+  constructor(private ElByClassName: ElementRef, private spinner: NgxSpinnerService,  private user: UsersService) { }
 
   ngOnInit(): void {
   }
 
   async sendToApi(props: any){
-    this.spinner.show();
+    let usergenerations : Number;
+    //localStorage.setItem('userfreegenerations', "3"); // ---------- for Testing!!
+
+    console.log(localStorage.getItem('userfreegenerations'));
+    if(localStorage.getItem('usergenerations') != "0"){
+      usergenerations = Number(localStorage.getItem('usergenerations'));
+    }else{
+      usergenerations = Number(localStorage.getItem('userfreegenerations'));
+    }
+    if(usergenerations > 0){
+      this.spinner.show();
 
     const deepai = require('deepai'); // OR include deepai.min.js as a script tag in your HTML
     deepai.setApiKey('dea3aaa7-6b55-4af5-862e-1835db355c0c');
@@ -43,6 +56,29 @@ export class PromptWindowComponent implements OnInit {
 
     promptImage.src = resp.output_url;
     this.spinner.hide();
+    this.subtractfreegeneration();
+    }else{
+      console.log("No more generations available!");
+    }
+    
+  }
+
+subtractfreegeneration(){
+    const userId = localStorage.getItem('userid'); 
+    let count = 1;
+
+
+    console.log(userId);
+
+    this.user.subtractfreegeneration(userId, count).subscribe(data=>{
+      this.data = Object.values (data);
+
+      console.log(this.data)
+      localStorage.setItem('userfreegenerations', this.data[4]);
+          
+    })
+
+
   }
 
 }

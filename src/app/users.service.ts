@@ -15,6 +15,14 @@ export class UsersService {
     return this.http.get(url);
   }
 
+  subtractfreegeneration(userid: string | null, count: number){
+    console.log("Henlo in service function!");
+    console.log("https://dm-gen.com/api/v1/users/subtractfreegeneration/"+userid+"&"+count);
+
+    let url="https://dm-gen.com/api/v1/users/subtractfreegeneration/"+userid+"&"+count;
+    return this.http.put(url, {
+    })
+  }
   loginUser(email: string, password: string ){
     console.log("in login function frontend")
     let url="https://dm-gen.com/api/v1/users/login";

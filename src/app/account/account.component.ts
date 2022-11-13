@@ -24,13 +24,21 @@ export class AccountComponent implements OnInit {
   ngOnInit(): void {
     this.initConfig();
 
+    let generationsLeft : number;
+    if(localStorage.getItem('usergenerations') !== "0"){
+      generationsLeft = Number(localStorage.getItem('usergenerations'));
+    }else{
+      generationsLeft = Number(localStorage.getItem('userfreegenerations'));
+    }
+    
+    const greeting = document.getElementById('greeting') as HTMLInputElement;
+    greeting.innerHTML = 'User: ' + localStorage.getItem('username') + "<br> Email: "
+     + localStorage.getItem('usermail') + "<br> Generations left: "
+      + generationsLeft ;
+    
   }
 
   ngAfterViewInit(): void {
-    
-
-    const greeting = document.getElementById('greeting') as HTMLInputElement;
-    greeting.innerHTML = 'User: ' + localStorage.getItem('username') + "<br> Email: " + localStorage.getItem('usermail') + "<br> Generations left: " + localStorage.getItem('usergenerations') ;
     
   }
   goBackToPage(pageName : string){

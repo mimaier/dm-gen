@@ -33,7 +33,9 @@ export class HeaderComponent implements OnInit {
   navigateToPage(pageName : string){
     this.router.navigate([`${pageName}`]);
   }
-
+  refresh(): void {
+    window.location.reload();
+  }
   logoutUser(){
     localStorage.removeItem('username');
     localStorage.removeItem('usermail');
@@ -47,6 +49,7 @@ export class HeaderComponent implements OnInit {
     accountButton.style.display = "none";
     logoutButton.style.display = "none";
     registerButton.style.display = "block";
+    this.refresh();
 }
 
   switchSidebar() {
