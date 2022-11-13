@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import {UsersService} from '../users.service';
+import { render } from 'creditcardpayments/creditCardPayments'
+import { IPayPalConfig, ICreateOrderRequest }  from 'ngx-paypal';
+
+declare var paypal : any;
 
 @Component({
   selector: 'app-account',
@@ -9,18 +13,24 @@ import {UsersService} from '../users.service';
 })
 export class AccountComponent implements OnInit {
   data:any;
+
+  public payPalConfig?: IPayPalConfig;
+  showSuccess: boolean = false;
+
   constructor(private router: Router, private user: UsersService) { 
-    
   }
 
+// PAYPAL !!  https://www.youtube.com/watch?v=AtZGoueL4Vs 
   ngOnInit(): void {
+    this.initConfig();
+
   }
 
   ngAfterViewInit(): void {
-    const greeting = document.getElementById('greeting') as HTMLInputElement;
-    greeting.innerHTML = 'Hello ' + localStorage.getItem('username');
     
 
+    const greeting = document.getElementById('greeting') as HTMLInputElement;
+    greeting.innerHTML = 'User: ' + localStorage.getItem('username') + "<br> Email: " + localStorage.getItem('usermail') + "<br> Generations left: " + localStorage.getItem('usergenerations') ;
     
   }
   goBackToPage(pageName : string){
@@ -55,4 +65,69 @@ export class AccountComponent implements OnInit {
     })
   }
 
+  private initConfig(): void {
+    this.payPalConfig = {
+    currency: 'EUR',
+    
+    //clientId: 'Ac6YvVy9gCoVTUHyFnPGrhHUmwBj59TdCF6cvgaquOLyTdjaY5QBFQWr2VSZ-bVCJju7mNrOyozcj_6U',
+    clientId: 'wrongkey',
+    createOrderOnClient: (data) => <ICreateOrderRequest>{
+      intent: 'CAPTURE',
+      purchase_units: [
+        {
+          amount: {
+            currency_code: 'EUR',
+            value: '1.50',
+            breakdown: {
+              item_total: {
+                currency_code: 'EUR',
+                value: '1.50'
+              }
+            }
+          },
+          items: [
+            {
+              name: 'dm-gen Subscription',
+              quantity: '1',
+              category: 'DIGITAL_GOODS',
+              unit_amount: {
+                currency_code: 'EUR',
+                value: '1.50',
+              },
+            }
+          ]
+        }
+      ]
+    },
+    advanced: {
+      commit: 'true'
+    },
+    style: {
+      label: 'paypal',
+      layout: 'vertical'
+    },
+    onApprove: (data, actions) => {
+      console.log('onApprove - transaction was approved, but not authorized', data, actions);
+      actions.order.get().then((details: any) => {
+        console.log('onApprove - you can get full order details inside onApprove: ', details);
+      });
+    },
+    onClientAuthorization: (data) => {
+      console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
+      this.showSuccess = true;
+    },
+    onCancel: (data, actions) => {
+      console.log('OnCancel', data, actions);
+    },
+    onError: err => {
+      console.log('OnError', err);
+    },
+    onClick: (data, actions) => {
+      console.log('onClick', data, actions);
+    },
+  };
+  
+
+  }
 }
+

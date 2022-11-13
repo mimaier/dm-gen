@@ -1,7 +1,7 @@
 @import "../../styles.scss";
 
 .main-window{
-    background-color: $account-color-temp;
+    background-color: rgb(240, 224, 211);
     position: fixed;
     left: 0;
     top: 0;
@@ -15,7 +15,7 @@
 
 .image-window{
     grid-column: 1;
-    background-image: url("../../assets/img/account_banner.png");
+    background-image: url("../../assets/img/account_banner2_crop.png");
 }
 
 .text-window{
@@ -52,4 +52,22 @@
         display:flex;
         flex-direction: column;
     }
+}
+@media only screen and (max-width: 690px) {
+    .main-window{
+        grid-template-columns: 1fr;
+    }
+    .image-window{
+        display: none;
+    }
+    
+    .text-window{
+        grid-column: 1;
+
+        .logo{
+            height: 150px;
+            width: 400px;
+            margin: 0 auto;
+        }
+    }    
 }

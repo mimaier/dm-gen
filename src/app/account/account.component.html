@@ -7,10 +7,13 @@
 
     <div class="text-window">
         <img src="../../assets/img/logo_new.png" class="logo">
-        <h1 id="greeting">Hello XXX</h1>
         <h2>Welcome to your Account page</h2>
+
+        <h2 id="greeting">User: XXX</h2>
         <h3>Credits and Billing</h3>
-        <h4>Pricing: $5 for 250 generated images or a month of unlimited uses</h4>       
+
+        <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+        <h4>Pricing:</h4>       
         
     
         <button class="sign-up-back-btn btn" (click)="goBackToPage('home')" >Get back</button>

@@ -24,9 +24,10 @@ export class SignUpComponent implements OnInit {
     this.user.loginUser(email, password).subscribe(data=>{
       this.data = Object.values (data);
       console.log(this.data)
-      localStorage.setItem('username', this.data[0]);
-      localStorage.setItem('usermail', this.data[0]);
-      localStorage.setItem('token', this.data[0]);
+      localStorage.setItem('userid', this.data[0]);
+      localStorage.setItem('username', this.data[1]);
+      localStorage.setItem('usermail', this.data[2]);
+      localStorage.setItem('token', this.data[3]);
       const accountButton = document.getElementById('accountbtn') as HTMLInputElement;
       const logoutButton = document.getElementById('logoutbtn') as HTMLInputElement;
       const registerButton = document.getElementById('registerbutton') as HTMLInputElement;

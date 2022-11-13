@@ -23,6 +23,7 @@ import { ImageWindowComponent } from './image-window/image-window.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FooterComponent } from './footer/footer.component';
 import { AccountComponent } from './account/account.component';
+import { NgxPayPalModule} from 'ngx-paypal';
 
 interface NgxSpinnerConfig {
   type?: string;
@@ -53,7 +54,8 @@ interface NgxSpinnerConfig {
     NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
     SocialLoginModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxPayPalModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
