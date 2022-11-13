@@ -24,8 +24,10 @@
 
             <!--<div class="vl"></div>-->
             <!--<p class="logo_text">Generate your Imagination to life!</p>-->
-            <button class="account-btn" id="accountbtn" (click)="navigateToPage('/account')">Your Account</button>
-            <button class="logout-btn" id="logoutbtn" (click)="logoutUser()">Logout</button>
+            <div class="logout-account-btns">
+                <button class="account-btn" id="accountbtn" (click)="navigateToPage('/account')">Account</button>
+                <button class="logout-btn" id="logoutbtn" (click)="logoutUser()">Logout</button>
+            </div>
             <button class="register-btn" id="registerbutton" (click)="navigateToPage('/sign-up')">Sign-up or Login</button>
         </ul>
     </nav>

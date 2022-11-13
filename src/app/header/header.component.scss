@@ -73,8 +73,16 @@
 .register-btn {
     @include standardButtonSmall();
 }
+.logout-account-btns{
+    display: flex;
+    gap: 10px;
+}
 //TODO: fails to load
 @media only screen and (max-width: 630px) {
+    .logout-account-btns{
+        display: grid;
+        gap: 2px;
+    }
     .login-btn, .register-btn, .logout-btn, .register-btn, .account-btn {
         display: none;
     }
@@ -83,15 +91,15 @@
         width: 90px;
     }
     .logout-btn{
-        height: 40px;
+        height: 20px;
         width: 80px;
     }
     .account-btn{
-        height: 40px;
-        width: 90px;
+        height: 20px;
+        width: 80px;
     }
     .header_logo {
-        width: 200px;
+        width: 220px;
         cursor: pointer;
     }
     .menu-nav{

@@ -3,6 +3,9 @@
         <h1>{{pageTitle}}</h1>
         <label class="prompt-label">AI Prompt: </label>
         <input type="text" class="prompt-txtbox" placeholder={{placeHolder}} name="prompttxtbox" ngModel #txtprop>
-        <button class="prompt-btn">Generate</button>
+        <button class="prompt-btn" id="prompt-btn">Generate</button>
+        <h2 class="register-text" id="register-text">Register for Free and start generating!</h2>
+        <button class="register-btn" id="register-btn" (click)="navigateToPage('/sign-up')">Sign-up or Login</button>
+
     </form>
 </div>

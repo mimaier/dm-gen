@@ -22,11 +22,11 @@ export class HomeComponent implements OnInit {
       const card_window = document.getElementById('card-window') as HTMLInputElement;
       const register_text = document.getElementById('register-text') as HTMLInputElement;
       console.log(card_window);
-      register_text.style.display = "none";
-      card_window.style.display = "flex";
+      //register_text.style.display = "none !important";
+      //card_window.style.display = "flex";
     }else{
       const register_text = document.getElementById('register-text') as HTMLInputElement;
-      register_text.style.display = "block";
+      //register_text.style.display = "block";
 
     }
   }

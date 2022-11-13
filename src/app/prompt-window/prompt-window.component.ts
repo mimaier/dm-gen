@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, Input } from '@angular/core';
 import { NgxSpinnerService } from "ngx-spinner";
 import {UsersService} from '../users.service';
+import { Router } from '@angular/router';
 
 const fs = require('fs');
 
@@ -16,9 +17,24 @@ export class PromptWindowComponent implements OnInit {
   @Input() public placeHolder: string = "";
   data:any;
 
-  constructor(private ElByClassName: ElementRef, private spinner: NgxSpinnerService,  private user: UsersService) { }
+  constructor(private ElByClassName: ElementRef, private spinner: NgxSpinnerService,  private user: UsersService,private router: Router) { }
 
   ngOnInit(): void {
+    console.log(localStorage.getItem('token'))
+    const prompt_btn = document.getElementById('prompt-btn') as HTMLInputElement;
+    const register_txt = document.getElementById('register-text') as HTMLInputElement;
+    const register_btn = document.getElementById('register-btn') as HTMLInputElement;
+
+    if(localStorage.getItem('token') != null) {
+      prompt_btn.style.display = "block";
+      register_txt.style.display = "none";
+      register_btn.style.display = "none";
+
+    }else{
+      prompt_btn.style.display = "none";
+      register_txt.style.display = "block";
+      register_btn.style.display = "block";
+    }
   }
 
   async sendToApi(props: any){
@@ -61,6 +77,9 @@ export class PromptWindowComponent implements OnInit {
       console.log("No more generations available!");
     }
     
+  }
+  navigateToPage(pageName : string){
+    this.router.navigate([`${pageName}`]);
   }
 
 subtractfreegeneration(){
