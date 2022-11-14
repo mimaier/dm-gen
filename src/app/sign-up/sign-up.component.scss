@@ -20,6 +20,7 @@
     @include textBoxMedium();
     background-color: $textbox-color-temp;
 }
+
 .image-window{
     grid-column: 1;
     background-image: url("../../assets/img/signup.png");
@@ -62,9 +63,13 @@
         display:flex;
         flex-direction: column;
         
-        .sign-up-success{
-            visibility:hidden;
-        }
+        
+    }
+    .sign-up-success{
+        visibility:hidden;
+        font-weight: bold;
+        text-align: center;
+
     }
 }
 
@@ -121,18 +126,18 @@
     flex-direction: column;
     align-items: center;
 
-    .sign-up-success{
-        visibility:hidden;
-    }
 }
 .sign-in-form{
     display:flex;
     flex-direction: column;
     align-items: center;
 
-    .sign-in-success{
-        visibility:hidden;
-    }
+    
+}
+.sign-in-success{
+    visibility:hidden;
+    font-weight: bold;
+
 }
 .sign-up-label{
     font-weight: bold;
