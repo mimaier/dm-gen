@@ -34,6 +34,7 @@ export class PromptWindowComponent implements OnInit {
       prompt_btn.style.display = "none";
       register_txt.style.display = "block";
       register_btn.style.display = "block";
+
     }
   }
 
@@ -48,36 +49,34 @@ export class PromptWindowComponent implements OnInit {
       usergenerations = Number(localStorage.getItem('userfreegenerations'));
     }
     if(usergenerations > 0){
+      if(localStorage.getItem('token') != null) {
       this.spinner.show();
+      const deepai = require('deepai'); // OR include deepai.min.js as a script tag in your HTML
+      deepai.setApiKey('dea3aaa7-6b55-4af5-862e-1835db355c0c');
+      console.log("LÄUFT!");
 
-    const deepai = require('deepai'); // OR include deepai.min.js as a script tag in your HTML
-    deepai.setApiKey('dea3aaa7-6b55-4af5-862e-1835db355c0c');
-    console.log("LÄUFT!");
+      const promptTxt = props.value;
+      console.log(promptTxt + this.promptExtender);
 
-    const promptTxt = props.value;
-    console.log(promptTxt + this.promptExtender);
+      var resp = await deepai.callStandardApi("fantasy-world-generator", {
+              //image: fs.createReadStream('../../assets/img/characters/character_logo.png'),
+              text: promptTxt + this.promptExtender,
+              grid_size: "1",
+            });
 
-    var resp = await deepai.callStandardApi("fantasy-world-generator", {
-            //image: fs.createReadStream('../../assets/img/characters/character_logo.png'),
-            text: promptTxt + this.promptExtender,
-            grid_size: "1",
-                        
-    });
-    
-    
+            const promptImage = document.getElementById('prompt-image') as HTMLInputElement;
+            console.log(resp);
+            console.log(resp.output_url);
 
-    const promptImage = document.getElementById('prompt-image') as HTMLInputElement;
-    console.log(resp);
-    console.log(resp.output_url);
-
-    promptImage.src = resp.output_url;
-    this.spinner.hide();
-    this.subtractfreegeneration();
-    }else{
-      console.log("No more generations available!");
-    }
-    
+            promptImage.src = resp.output_url;
+            this.spinner.hide();
+            this.subtractfreegeneration();
+            }else{
+              console.log("No more generations available!");
+            }
+      } 
   }
+
   navigateToPage(pageName : string){
     this.router.navigate([`${pageName}`]);
   }

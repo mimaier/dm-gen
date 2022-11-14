@@ -1,0 +1,33 @@
+<meta name="google-signin-scope" content="profile email">
+<meta name="google-signin-client_id" content="267252698889-ot7op90dnd15ga3hot4uq8bcc0micfkb.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js"></script>
+
+<div class="main-window">
+
+    <div class="image-window">
+              
+    </div>
+
+
+    <div class="text-window">
+        <img src="../../assets/img/logo_new.png" class="logo">
+        <div class="text-background">
+            <h2 style="text-align: center">Login to activate <br>your Account</h2>
+            <div class="sign-up-buttons">
+            <form class="sign-in-form" #props="ngForm" (ngSubmit)="specialLoginUser(emailpropsignin.value, passwordpropsignin.value)">
+                <label class="sign-in-label">Email </label>
+                <input type="text" class="sign-in-txtbox email_textbox" placeholder="john@dough.at" name="sign-in-txtbox-email" ngModel #emailpropsignin>
+                <br>
+                <label class="sign-in-label">Password </label>
+                <input type="password" class="sign-in-txtbox password_textbox" placeholder="*********" name="sign-in-txtbox-password" ngModel #passwordpropsignin>
+                <br>   <br>       
+                <button class="sign-in-btn btn">Sign in</button>
+                <label class="sign-in-success" id="sign-in-success">Successfully signed in! </label>
+            </form>
+            </div>
+        </div>
+        <br><br>
+        <button class="sign-up-back-btn" (click)="goBackToPage('home')" >Get back</button>
+    </div>
+
+</div>

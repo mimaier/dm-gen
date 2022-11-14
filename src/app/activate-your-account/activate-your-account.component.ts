@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {UsersService} from '../users.service';
-
 @Component({
-  selector: 'app-sign-up',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.scss']
+  selector: 'app-activate-your-account',
+  templateUrl: './activate-your-account.component.html',
+  styleUrls: ['./activate-your-account.component.scss']
 })
-export class SignUpComponent implements OnInit {
+export class ActivateYourAccountComponent implements OnInit {
   data:any;
+
   constructor(private router: Router, private user: UsersService) { }
 
   ngOnInit(): void {
@@ -22,8 +22,8 @@ export class SignUpComponent implements OnInit {
   refresh(): void {
     window.location.reload();
   }
-  loginUser(email:string, password:string){
-    this.user.loginUser(email, password).subscribe(data=>{
+  specialLoginUser(email:string, password:string){
+    this.user.specialLoginUser(email, password).subscribe(data=>{
       this.data = Object.values (data);
       console.log(this.data)
       localStorage.setItem('userid', this.data[0]);
@@ -60,5 +60,4 @@ export class SignUpComponent implements OnInit {
 
     })
   }
-
 }

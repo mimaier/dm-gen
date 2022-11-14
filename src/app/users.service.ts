@@ -31,12 +31,21 @@ export class UsersService {
       "password": password,
     })
   }
+  specialLoginUser(email: string, password: string ){
+    console.log("in login function frontend")
+    let url="https://dm-gen.com/api/v1/users/speciallogin";
+    return this.http.post(url, {
+      "email": email,
+      "password": password,
+    })
+  }
   registerUser(username: string, password: string, email: string){
     let url="https://dm-gen.com/api/v1/users/register";
     return this.http.post(url, {
       "username": username,
       "email": email,
-      "password": password 
+      "password": password,
+      "loginable" : 0 
     })
   }
 
