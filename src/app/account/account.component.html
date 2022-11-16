@@ -7,16 +7,24 @@
 
     <div class="text-window">
         <img src="../../assets/img/logo_new.png" class="logo">
-        <h2>Welcome to your Account page</h2>
 
-        <h2 id="greeting">User: XXX</h2>
-        <h3>Credits and Billing</h3>
-
+        <div class="container" style="">
+            <h2 class="container-label" >Username:</h2>
+            <h3 class="username userdata" id="username" >XXX</h3>
+        </div>
+        <div class="container">
+            <h2 class="container-label">Email-Address:</h2>  
+            <h3 class="email userdata" id="email">XXX</h3> 
+         </div>
+        <div class="container">
+            <h2 class="container-label">Tokens left:</h2>
+            <h3 class="generations userdata" id="generations">XXX</h3>
+        </div>
+        <h1>Credits and Billing</h1>
+        <h4>Get 250 Tokens for 3€</h4>
         <ngx-paypal [config]="payPalConfig"></ngx-paypal>
-        <h4>Pricing:</h4>       
-        
-    
+        <label class="pay-pal-success" id="pay-pal-success">Successfully payed! </label>        
         <button class="sign-up-back-btn btn" (click)="goBackToPage('home')" >Get back</button>
+        <br>
     </div>
-    
 </div>

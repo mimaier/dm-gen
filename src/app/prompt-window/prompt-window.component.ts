@@ -71,6 +71,11 @@ export class PromptWindowComponent implements OnInit {
             promptImage.src = resp.output_url;
             this.spinner.hide();
             this.subtractfreegeneration();
+
+            const upscaleBtn = document.getElementById('upscale-btn') as HTMLInputElement;
+            upscaleBtn.style.visibility = "visible";
+            const downloadBtn = document.getElementById('download-btn') as HTMLInputElement;
+            downloadBtn.style.visibility = "visible";
             }else{
               console.log("No more generations available!");
             }

@@ -10,13 +10,13 @@
             <div class="sign-up-buttons">
                 <form class="sign-up-form" #props="ngForm" (ngSubmit)="registerUser(usernameprop.value, passwordprop.value, emailprop.value)">
                   <label class="sign-up-label">Username </label>
-                  <input type="text" class="sign-up-txtbox username_textbox" placeholder="JohnDough69" name="username_textbox" ngModel #usernameprop>
+                  <input type="text" class="sign-up-txtbox username_textbox" id="usernametxt" placeholder="JohnDough69" name="username_textbox" ngModel #usernameprop>
                   <br>
                   <label class="sign-up-label">Password </label>
-                  <input type="password" class="sign-up-txtbox password_textbox" placeholder="*********" name="password_textbox" ngModel #passwordprop>
+                  <input type="password" class="sign-up-txtbox password_textbox" id="passwtxt" placeholder="*********" name="password_textbox" ngModel #passwordprop>
                   <br>
                   <label class="sign-up-label">Email </label>
-                  <input type="email"  class="sign-up-txtbox email_textbox" placeholder="john@dough.at" name="email_textbox" ngModel #emailprop>
+                  <input type="email"  class="sign-up-txtbox email_textbox" id="emailtxt" placeholder="john@dough.at" name="email_textbox" ngModel #emailprop>
                   <br><br><br>
                   <button class="sign-up-btn btn">Sign Up</button>
                 </form>   
@@ -27,7 +27,7 @@
 
 
     <div class="text-window">
-        <img src="../../assets/img/logo_new.png" class="logo">
+        <!--<img src="../../assets/img/logo_new.png" class="logo">-->
         <div class="text-background">
             <h2>Login to your Account</h2>
             <div class="sign-up-buttons">

@@ -1,43 +1,54 @@
+<div class="main">
+    <div class="text-container">
+            <div class="text-wrap">
+                <h1 class="home-title">Being a Dungeon Master Has Never Been Easier!</h1>
+                <h3 class="home-description">Create character-art, landscapes, cities, and anything else,
+                     in seconds, just the way you imagine it <br><br>Register for free below to get started!</h3>
+                <button class="register-btn" id="register-btn" (click)="navigateToPage('/sign-up')">Sign-up or Login</button>
 
-<div class="mainWindow">
-    <h1 id="register-text" style="magin-top: 100px; display: none; color: white;">Register for Free to generate your Imagination to life!</h1>
-   <div class="card-window" id="card-window" >
-        <div class="character-card card "  >
-            <div class="image-container" (click)="goBackToPage('characters')">
-                <img src="../../assets/img/characters/character_logo_new3.png" class="card-img">
-                <p class="card_txt">Characters</p>
-            </div>
-        </div>
-        <div class="character-card card"  >
-            <div class="image-container" (click)="goBackToPage('landscapes')">
-                <img src="../../assets/img/landscapes/landscape_new.png" class="card-img">
-                <p class="card_txt">Landscapes</p>
-            </div>
-        </div>
-        <div class="character-card card" >
-            <div class="image-container" (click)="goBackToPage('towns')">
-                <img src="../../assets/img/towns/town_new.png" class="card-img">
-                <p class="card_txt">Towns</p>
-            </div>
-        </div>
-        <div class="character-card card" >
-            <div class="image-container" (click)="goBackToPage('items')">
-                <img src="../../assets/img/items/general.png" class="card-img">
-                <p class="card_txt">General</p>
-            </div>
-        </div>
-   </div>   
-   <!--
-   <div class="sample-window">
-    <div class="random-image-card">
-        <img src="../../assets/img/random/nomad.jpg" class="card-img">
+            </div>   
+             
     </div>
-    <div class="random-image-card">
-        <img src="../../assets/img/random/oldtown.jpg" class="card-img">
+    <div class="mainWindow">
+        <div class="card-window" id="card-window" >
+            <div class="character-card card "  >
+                <div class="image-container" (click)="goBackToPage('characters')">
+                    <img src="../../assets/img/characters/character_logo_new3.png" class="card-img">
+                    <p class="card_txt">Characters</p>
+                </div>
+            </div>
+            <div class="character-card card"  >
+                <div class="image-container" (click)="goBackToPage('landscapes')">
+                    <img src="../../assets/img/landscapes/landscape_new.png" class="card-img">
+                    <p class="card_txt">Landscapes</p>
+                </div>
+            </div>
+            <div class="character-card card" >
+                <div class="image-container" (click)="goBackToPage('towns')">
+                    <img src="../../assets/img/towns/town_new.png" class="card-img">
+                    <p class="card_txt">Towns</p>
+                </div>
+            </div>
+            <div class="character-card card" >
+                <div class="image-container" (click)="goBackToPage('items')">
+                    <img src="../../assets/img/items/general.png" class="card-img">
+                    <p class="card_txt">General</p>
+                </div>
+            </div>
+       </div>   
+       <!--
+       <div class="sample-window">
+        <div class="random-image-card">
+            <img src="../../assets/img/random/nomad.jpg" class="card-img">
+        </div>
+        <div class="random-image-card">
+            <img src="../../assets/img/random/oldtown.jpg" class="card-img">
+        </div>
+        <div class="random-image-card">
+            <img src="../../assets/img/random/wizardhat.jpg" class="card-img">
+        </div>
+       </div>  
+       -->
     </div>
-    <div class="random-image-card">
-        <img src="../../assets/img/random/wizardhat.jpg" class="card-img">
-    </div>
-   </div>  
-   -->
+    
 </div>

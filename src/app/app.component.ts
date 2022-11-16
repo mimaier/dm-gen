@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {UsersService} from './users.service';
 
+//pkill -f node
 
 
 @Component({

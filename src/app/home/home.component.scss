@@ -3,14 +3,57 @@
 .mainWindow{
     display: flex;
     flex-direction: column;
-    padding-top: 128px;
+    padding-top: 20px;
     margin: 0 auto;
     max-width: 1440px;
 }
+.home-title{
+    //color: $text-color-red;
+    color:white;
+    font-size: 3rem;
+}
+.home-description{
+   // color: $text-color-red;
+    color:white;
+    line-height: 35px;
 
+}
+.text-container{
+    padding-top:140px;
+    width: 100%;
+    height: 700px;
+    text-align: left;
+    background-color: #1b1b1b;
+    //border: 3px solid $text-color-red;
+    background: 
+            url("../../assets/img/Dragonfight_deskt_blk.png") center top;
+            background-size: cover;
+}
+
+
+
+.register-btn {
+    @include standardButtonSmall();
+    width: 200px;
+    height: 50px;
+    margin-top: 40px;
+}
+.text-wrap{
+    padding-top: 20px;
+    //padding-bottom: 20px;
+    //border: 3px solid $text-color-red;
+    width: 600px;
+    margin-left: 100px;
+    border-radius: 30px;
+    //background-color: #f8f3e5;
+    
+
+}
 .card-window {
     display: flex;
     justify-content: center;
+    padding-top: 70px;
+    padding-bottom: 70px;
 
     .card{
         display: flex;
@@ -105,7 +148,9 @@
         }
     }
 }
-
+    .text-container{
+       
+    }
 }
 
 @media only screen and (max-width: 690px){
@@ -118,5 +163,53 @@
             
         }
         
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .text-container{
+        margin-top: 50px ;
+        padding-top:200px ;
+    }
+    .text-wrap{
+        width: 300px ;
+        margin-left: 50px ;
+    }
+    .home-title{
+        width: 400px ;
+    }
+    .home-description{
+        width: 400px ;
+    }
+    .register-btn {
+        @include standardButtonSmall();
+        width: 200px ;
+        height: 50px ;
+        margin-top: 60px ;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .text-container{
+        margin-top: 20px !important;
+        padding-top:200px !important;
+    }
+    .text-wrap{
+        width: 200px !important;
+        margin-left: 25px !important;
+    }
+    .home-title{
+        width: 300px !important;
+        font-size: 2rem !important;
+
+    }
+    .home-description{
+        width: 300px !important;
+        font-size: 1.25rem !important;
+
+    }
+    .register-btn {
+        @include standardButtonSmall();
+        width: 200px !important;
+        height: 50px !important;
+        margin-top: 60px !important;
     }
 }

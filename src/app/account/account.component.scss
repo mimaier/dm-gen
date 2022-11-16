@@ -1,7 +1,7 @@
 @import "../../styles.scss";
 
 .main-window{
-    background-color: rgb(240, 224, 211);
+    background-color: rgb(241, 233, 221);
     position: fixed;
     left: 0;
     top: 0;
@@ -26,36 +26,43 @@
     align-items: center;
 
     .logo{
-        height: 200px;
-        width: 600px;
-        margin: 0 auto;
-    }
-
-    .sign-up-buttons{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-        
+        height: 150px;
+        width: 400px;
+        top: 0;
     }
     .btn{
         @include standardButtonSmall();
 
     }
+    .container{
+        width: 40%; 
+        border: 2px solid  rgb(104, 7, 7);
+        background-color: $body-color-temp;
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        align-items: center;
+        
+        border-radius: 10px;
+        margin-top: 5px;
 
-    .sign-up-back-btn{
-        margin-top: 0%;
+        .container-label{
+            color: rgb(104, 7, 7);
+            margin-left: 5px;
+        }
     }
 
-    .sign-up-form{
-        display:flex;
-        flex-direction: column;
+    .pay-pal-success{
+        visibility: hidden;
+        text-align: center;
+        font-weight: bold;
+        padding-bottom: 5px;
     }
 }
-@media only screen and (max-width: 690px) {
+@media only screen and (max-width: 1100px) {
     .main-window{
         grid-template-columns: 1fr;
+        overflow-y: scroll;
+        @include transparentScrollbar();
     }
     .image-window{
         display: none;
@@ -65,9 +72,26 @@
         grid-column: 1;
 
         .logo{
-            height: 150px;
-            width: 400px;
+            height: 120px;
+            width: 350px;
             margin: 0 auto;
         }
     }    
+
+    .container{
+        width: 80% !important;
+        grid-template-columns: 1fr !important;
+        .container-label{
+            grid-column: 1;
+            margin-top: 0;
+            margin-bottom: 0px;;
+            text-align: center;
+        }
+        .userdata{
+            grid-column: 1;
+            text-align: center;
+        }
+    }
+
 }
+

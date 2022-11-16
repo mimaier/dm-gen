@@ -30,6 +30,9 @@ export class HomeComponent implements OnInit {
 
     }
   }
+  navigateToPage(pageName : string){
+    this.router.navigate([`${pageName}`]);
+  }
   goBackToPage(pageName : string){
     this.router.navigate([`${pageName}`]);
   }

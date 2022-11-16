@@ -93,6 +93,12 @@ export class SignUpComponent implements OnInit {
       signUpSuccessLabel.style.color = "#47fc77";
       signUpSuccessLabel.innerHTML = "Successfully registered! <br>Please check your email account";
       signUpSuccessLabel.style.visibility = "visible";
+      const usernametxt = document.getElementById('usernametxt') as HTMLInputElement;
+      const passwtxt = document.getElementById('passwtxt') as HTMLInputElement;
+      const emailtxt = document.getElementById('emailtxt') as HTMLInputElement;
+      usernametxt.value = "";
+      passwtxt.value = "";
+      emailtxt.value = "";
 
      // this.loginUser(email, password);
 

@@ -22,6 +22,7 @@
       100px 1fr max-content
   */
   gap: 1em;
+  height: 85vh;
 }
 
 .break {
@@ -50,6 +51,8 @@
 
       width: 92vw;
       margin: 0 auto; 
+      height: 100%;
+
     }
 
     ::ng-deep app-prompt-window {
