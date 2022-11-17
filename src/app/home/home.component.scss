@@ -26,14 +26,14 @@
     background-color: #1b1b1b;
     //border: 3px solid $text-color-red;
     background: 
-            url("../../assets/img/Dragonfight_deskt_blk.png") center top;
+            url("../../assets/img/home/Dragonfight_deskt_blk3.png") center top;
             background-size: cover;
 }
 
 
 
 .register-btn {
-    @include standardButtonSmall();
+    @include standardButtonBlue();
     width: 200px;
     height: 50px;
     margin-top: 40px;
@@ -169,8 +169,10 @@
     .text-container{
         margin-top: 50px ;
         padding-top:200px ;
+        height: 600px;
     }
     .text-wrap{
+        margin-top: -50px;
         width: 300px ;
         margin-left: 50px ;
     }
@@ -181,10 +183,8 @@
         width: 400px ;
     }
     .register-btn {
-        @include standardButtonSmall();
         width: 200px ;
         height: 50px ;
-        margin-top: 60px ;
     }
 }
 @media only screen and (max-width: 800px) {
@@ -193,6 +193,7 @@
         padding-top:200px !important;
     }
     .text-wrap{
+        top: 50px;
         width: 200px !important;
         margin-left: 25px !important;
     }
@@ -207,7 +208,6 @@
 
     }
     .register-btn {
-        @include standardButtonSmall();
         width: 200px !important;
         height: 50px !important;
         margin-top: 60px !important;

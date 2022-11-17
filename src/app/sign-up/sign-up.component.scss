@@ -53,7 +53,7 @@
         
     }
     .btn{
-        @include standardButtonSmall();
+        @include standardButtonRed();
         
     }
 
@@ -110,13 +110,12 @@
         gap: 5px;
         
     }
-    .btn{
-        @include standardButtonSmall();
 
+    .sign-in-btn{
+        @include standardButtonBlue();
     }
-
     .sign-up-back-btn{
-        @include standardButton();
+        @include standardButtonRed();
     }
 
    

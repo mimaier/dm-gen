@@ -49,12 +49,23 @@ export class SignUpComponent implements OnInit {
       if(localStorage.getItem('userloginable') == "1"){
         const accountButton = document.getElementById('accountbtn') as HTMLInputElement;
         const logoutButton = document.getElementById('logoutbtn') as HTMLInputElement;
-        const registerButton = document.getElementById('registerbutton') as HTMLInputElement;
+        //const registerButton = document.getElementById('registerbutton') as HTMLInputElement;
   
         console.log(accountButton);
         accountButton.style.display = "block";
         logoutButton.style.display = "block";
-        registerButton.style.display = "none";
+       // registerButton.style.display = "none";
+
+        if(window.innerWidth < 800) {
+          const header_logo = document.getElementById('header_logo') as HTMLInputElement;
+          header_logo.style.width = ("250px");
+          header_logo.style.marginLeft = "10px"; 
+        }
+        
+      
+
+
+
 
         this.navigateToPage('/');
       }else{

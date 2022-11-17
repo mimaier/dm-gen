@@ -50,22 +50,20 @@ h1{
     }
 }
 .prompt-btn{
-    @include standardButtonSmall();
+    @include standardButtonRed();
     margin: 0 auto;
 }
 .register-text{
     top: 50px;
     text-align: center;
     color: rgb(120, 9, 9);
-    display: none;
 }
 .register-btn {
-    @include standardButtonSmall();
+    @include standardButtonBlue();
     width: 200px;
     height: 50px;
     margin: 0 auto;
-    display: none;
-
+    visibility: hidden;
 }
 @media only screen and (max-width: 700px) {
     .prompt-window{

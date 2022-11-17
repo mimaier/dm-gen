@@ -30,7 +30,7 @@ export class ImageWindowComponent implements OnInit {
       const upscaleButton = document.getElementById('upscale-btn') as HTMLInputElement;
 
       
-      upscaleButton.style.backgroundColor = 'rgba(255, 101, 41, 0.25)';
+      upscaleButton.style.backgroundColor = 'rgba(173, 2, 2, 0.77)';
       //upscaleLabel.innerHTML = "currently working ...";
 
         var resp = await deepai.callStandardApi("torch-srgan", {
@@ -44,7 +44,7 @@ export class ImageWindowComponent implements OnInit {
         promptImage.src = resp.output_url;
 
         //upscaleLabel.innerHTML = "Job done!";
-        upscaleButton.style.backgroundColor = 'rgba(170, 247, 57, 0.45)';
+        upscaleButton.style.backgroundColor = 'rgba(2, 173, 50, 0.85)';
 
     })()
    

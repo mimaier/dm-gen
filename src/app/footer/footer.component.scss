@@ -1,6 +1,7 @@
 @import "../../styles.scss";
 
 footer {
+    background-color: $body-color-temp;
 
     #footer-content {
         
@@ -8,6 +9,9 @@ footer {
         justify-content: flex-end;
         padding: 2px 26px 2px 26px;
         background-color: $body-color-temp;
+        background:
+        url("../../assets/img/home/footer.png") center top;
+        background-size: cover;
         margin: 0;
         position: relative;
         z-index: 20;

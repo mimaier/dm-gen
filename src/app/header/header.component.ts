@@ -14,32 +14,32 @@ export class HeaderComponent implements OnInit {
   
     const accountButton = document.getElementById('accountbtn') as HTMLInputElement;
     const logoutButton = document.getElementById('logoutbtn') as HTMLInputElement;
-    const registerButton = document.getElementById('registerbutton') as HTMLInputElement;
+   // const registerButton = document.getElementById('registerbutton') as HTMLInputElement;
 
     if(localStorage.getItem('token') != null){
       accountButton.style.display = "block";
       logoutButton.style.display = "block";
-      registerButton.style.display = "none";
+   //   registerButton.style.display = "none";
     }else{
       accountButton.style.display = "none";
       logoutButton.style.display = "none";
-      registerButton.style.display = "block";
+   //   registerButton.style.display = "block";
     }
   }
   
   ngOnInit(): void {
     const accountButton = document.getElementById('accountbtn') as HTMLInputElement;
     const logoutButton = document.getElementById('logoutbtn') as HTMLInputElement;
-    const registerButton = document.getElementById('registerbutton') as HTMLInputElement;
+    //const registerButton = document.getElementById('registerbutton') as HTMLInputElement;
 
     if(localStorage.getItem('token') != null){
       accountButton.style.display = "block";
       logoutButton.style.display = "block";
-      registerButton.style.display = "none";
+     // registerButton.style.display = "none";
     }else{
       accountButton.style.display = "none";
       logoutButton.style.display = "none";
-      registerButton.style.display = "block";
+     // registerButton.style.display = "block";
     }
   }
   navigateToPage(pageName : string){
@@ -55,12 +55,16 @@ export class HeaderComponent implements OnInit {
 
     const accountButton = document.getElementById('accountbtn') as HTMLInputElement;
     const logoutButton = document.getElementById('logoutbtn') as HTMLInputElement;
-    const registerButton = document.getElementById('registerbutton') as HTMLInputElement;
+    //const registerButton = document.getElementById('registerbutton') as HTMLInputElement;
 
     console.log(accountButton);
     accountButton.style.display = "none";
     logoutButton.style.display = "none";
-    registerButton.style.display = "block";
+    //registerButton.style.display = "block";
+
+    localStorage.clear();
+  
+
     this.refresh();
 }
 

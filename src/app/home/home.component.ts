@@ -29,6 +29,16 @@ export class HomeComponent implements OnInit {
       //register_text.style.display = "block";
 
     }
+
+    if(window.location.pathname == "/" || window.location.pathname == "/home" ){
+      if(window.innerWidth < 800 && localStorage.getItem('token') == null) {
+        const header_logo = document.getElementById('header_logo') as HTMLInputElement;
+        header_logo.style.width = ("310px");
+        header_logo.style.marginLeft = "20px"; 
+      }
+      
+    }
+
   }
   navigateToPage(pageName : string){
     this.router.navigate([`${pageName}`]);

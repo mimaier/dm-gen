@@ -26,21 +26,41 @@ export class PromptWindowComponent implements OnInit {
     const register_btn = document.getElementById('register-btn') as HTMLInputElement;
 
     if(localStorage.getItem('token') != null) {
-      prompt_btn.style.display = "block";
-      register_txt.style.display = "none";
-      register_btn.style.display = "none";
+      prompt_btn.style.visibility = "visible";
+      register_txt.style.visibility = "hidden";
+      register_btn.style.visibility = "hidden";
 
     }else{
-      prompt_btn.style.display = "none";
-      register_txt.style.display = "block";
-      register_btn.style.display = "block";
+      prompt_btn.style.visibility = "hidden";
+      register_txt.style.visibility = "visible";
+      register_btn.style.visibility = "visible";
 
     }
   }
+  ngAfterViewInit() {
+    console.log(localStorage.getItem('token'))
+    const prompt_btn = document.getElementById('prompt-btn') as HTMLInputElement;
+    const register_txt = document.getElementById('register-text') as HTMLInputElement;
+    const register_btn = document.getElementById('register-btn') as HTMLInputElement;
 
+    if(localStorage.getItem('token') != null) {
+      prompt_btn.style.visibility = "visible";
+      register_txt.style.visibility = "hidden";
+      register_btn.style.visibility = "hidden";
+
+    }else{
+      prompt_btn.style.visibility = "hidden";
+      register_txt.style.visibility = "visible";
+      register_btn.style.visibility = "visible";
+
+    }
+  }
   async sendToApi(props: any){
     let usergenerations : Number;
     //localStorage.setItem('userfreegenerations', "3"); // ---------- for Testing!!
+
+    const upscaleButton = document.getElementById('upscale-btn') as HTMLInputElement;
+    upscaleButton.style.backgroundColor = '#3c3c3c';
 
     console.log(localStorage.getItem('userfreegenerations'));
     if(localStorage.getItem('usergenerations') != "0"){

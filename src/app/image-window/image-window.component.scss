@@ -51,7 +51,7 @@
         .upscale-btn {
             margin-top: 0;
             visibility: hidden;
-            @include standardButton();
+            @include standardButtonGrey();
             width: 150px;
             &:hover {
                 background-image: linear-gradient(to right, #ffffff00, rgba(255, 255, 255, 0));
@@ -63,7 +63,7 @@
         justify-content: center;
 
         .download-btn {
-            @include standardButton();
+            @include standardButtonRed();
             visibility: hidden;
             width: 100px;
         }

@@ -8,7 +8,7 @@
     justify-content: center;
     top: 0;
     left: 0;
-    height: 85px;
+    height: 95px;
 }
 
 .menu-nav {
@@ -21,7 +21,7 @@
     border-bottom: 3px solid $body-color-logo;
     align-items: center;
     background:
-        url("../../assets/img/header_banner_fin_windmill.png") center top;
+        url("../../assets/img/header_banner_fin_fire2.png") center top;
     background-size: cover;
 
 }
@@ -41,7 +41,7 @@
 }
 
 .header_logo {
-    width: 235px;
+    width: 330px;
     cursor: pointer;
 }
 
@@ -62,16 +62,18 @@
 }
 
 .account-btn {
-    @include standardButtonSmall();
+    @include standardButtonBlue();
     display: none;
 }
 
 .logout-btn {
-    @include standardButtonSmall();
+    @include standardButtonRed();
     display: none;
 }
 .register-btn {
-    @include standardButtonSmall();
+    @include standardButtonRed();
+    height: 30px;
+    font-size: 0.8em;
 }
 .logout-account-btns{
     display: flex;
@@ -93,10 +95,14 @@
     .logout-btn{
         height: 20px;
         width: 80px;
+        font-size: 0.7em !important;
+
     }
     .account-btn{
         height: 20px;
         width: 80px;
+        font-size: 0.7em !important;
+
     }
     .header_logo {
         width: 220px;

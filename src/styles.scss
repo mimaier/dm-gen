@@ -49,7 +49,7 @@ table {
 /* ------------------------------------------- */
 $body-color-signup:#e7e7db;
 
-$body-color-temp: #e7e7db;
+$body-color-temp: #f1f1e8;
 $textbox-color-temp: #f8f8f2;
 $textbox-color-parchment: #ebe7d2;
 
@@ -107,16 +107,77 @@ $mobile-screen: 500px;
 @mixin standardButtonSmall() {
     width: 140px;
     height: 30px;
-    font-size: 12px;
+    font-size: 1em;
     font-weight: bold;
     color: $body-color-logo-darker;
     background-color: $textbox-color-parchment;
-    border: 2px solid $text-color-red;
-    border-radius: 28px;
+    border: 3px solid $text-color-red;
+    border-radius: 12px;
     transition: 1ms;
     cursor: pointer;
     &:hover {
-        background-image: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));
+        background-color: $text-color-red;
+        color: $textbox-color-parchment;
+        border: 3px solid $textbox-color-parchment;
+    }
+}
+
+@mixin standardButtonRed() {
+    width: 140px;
+    height: 35px;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    background-color: #841623;
+    border: 3px solid #420b12;
+    border-radius: 12px;
+    transition: 1ms;
+    cursor: pointer;
+    transition: 0.7s;
+    &:hover {
+        background-color: $textbox-color-parchment;
+        color: #841623;
+        border: 3px solid #841623;
+
+    }
+}
+@mixin standardButtonBlue() {
+    width: 140px;
+    height: 35px;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    background-color: #1579bc;
+    border: 3px solid #0b5a8e;
+    border-radius: 12px;
+    transition: 1ms;
+    cursor: pointer;
+    transition: 0.7s;
+    &:hover {
+        background-color: $textbox-color-parchment;
+        color: #1579bc;
+        border: 3px solid #1579bc;
+
+    }
+}
+
+@mixin standardButtonGrey() {
+    width: 140px;
+    height: 35px;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    background-color: #3c3c3c;
+    border: 3px solid #1f1f1f;
+    border-radius: 12px;
+    transition: 1ms;
+    cursor: pointer;
+    transition: 0.7s;
+    &:hover {
+        background-color: $textbox-color-parchment;
+        color: #343434;
+        border: 3px solid #343434;
+
     }
 }
 

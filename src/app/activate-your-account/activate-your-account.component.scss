@@ -52,7 +52,7 @@
         
     }
     .btn{
-        @include standardButtonSmall();
+        @include standardButtonRed();
         
     }
 
@@ -106,12 +106,12 @@
         
     }
     .btn{
-        @include standardButtonSmall();
+        @include standardButtonRed();
 
     }
 
     .sign-up-back-btn{
-        @include standardButton();
+        @include standardButtonRed();
     }
 
    
