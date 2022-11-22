@@ -25,19 +25,15 @@ export class SignUpComponent implements OnInit {
   loginUser(email:string, password:string){
     let signInResponse : String;
     const signInSuccessLabel = document.getElementById('sign-in-success') as HTMLInputElement;
-    console.log("in loginUser");
     if(email.includes("@") == false){
-      console.log("inlcudes NO @");
       signInSuccessLabel.style.visibility = "visible";
       signInSuccessLabel.style.color = "red";
       signInSuccessLabel.innerHTML = "This is not a valid email address";
       return("This is not a valid email address");   
     }
-    console.log("inlcudes @");
 
     this.user.loginUser(email, password).subscribe(data=>{
       this.data = Object.values (data);
-      console.log(this.data)
       localStorage.setItem('userid', this.data[0]);
       localStorage.setItem('username', this.data[1]);
       localStorage.setItem('usermail', this.data[2]);
@@ -51,7 +47,6 @@ export class SignUpComponent implements OnInit {
         const logoutButton = document.getElementById('logoutbtn') as HTMLInputElement;
         //const registerButton = document.getElementById('registerbutton') as HTMLInputElement;
   
-        console.log(accountButton);
         accountButton.style.display = "block";
         logoutButton.style.display = "block";
        // registerButton.style.display = "none";
@@ -61,11 +56,6 @@ export class SignUpComponent implements OnInit {
           header_logo.style.width = ("250px");
           header_logo.style.marginLeft = "10px"; 
         }
-        
-      
-
-
-
 
         this.navigateToPage('/');
       }else{
@@ -87,9 +77,7 @@ export class SignUpComponent implements OnInit {
 
   registerUser(username:string, password:string, email:string){
     const signUpSuccessLabel = document.getElementById('sign-up-success') as HTMLInputElement;
-    console.log("in loginUser");
     if(email.includes("@") == false){
-      console.log("inlcudes NO @");
       signUpSuccessLabel.style.visibility = "visible";
       signUpSuccessLabel.style.color = "#ff5266";
       signUpSuccessLabel.innerHTML = "This is not a valid email address";
@@ -98,9 +86,7 @@ export class SignUpComponent implements OnInit {
 
     this.user.registerUser(username, password, email).subscribe(data=>{
       this.data = Object.values (data);
-      console.log(this.data)
       const signUpSuccessLabel = document.getElementById('sign-up-success') as HTMLInputElement;
-      console.log(signUpSuccessLabel);
       signUpSuccessLabel.style.color = "#47fc77";
       signUpSuccessLabel.innerHTML = "Successfully registered! <br>Please check your email account";
       signUpSuccessLabel.style.visibility = "visible";

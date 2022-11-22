@@ -1,12 +1,11 @@
 <div class="main-window">
-    <div class="image-window"></div>
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="267252698889-ot7op90dnd15ga3hot4uq8bcc0micfkb.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js"></script>
 
 
     <div class="text-window">
-        <img src="../../assets/img/logo_new.png" class="logo">
+        <img src="../../assets/img/dm-gen-logo.png" class="logo">
 
         <div class="container" style="">
             <h2 class="container-label" >Username:</h2>
@@ -20,11 +19,13 @@
             <h2 class="container-label">Tokens left:</h2>
             <h3 class="generations userdata" id="generations">XXX</h3>
         </div>
-        <h1>Credits and Billing</h1>
+        <h1>Add Generation-Tokens</h1>
         <h4>Get 250 Tokens for 3€</h4>
         <ngx-paypal [config]="payPalConfig"></ngx-paypal>
         <label class="pay-pal-success" id="pay-pal-success">Successfully payed! </label>        
         <button class="sign-up-back-btn btn" (click)="goBackToPage('home')" >Get back</button>
         <br>
     </div>
-</div>
+    <div class="image-window"></div>
+
+</div> 

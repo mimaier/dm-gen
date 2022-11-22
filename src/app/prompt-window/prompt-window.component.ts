@@ -20,7 +20,6 @@ export class PromptWindowComponent implements OnInit {
   constructor(private ElByClassName: ElementRef, private spinner: NgxSpinnerService,  private user: UsersService,private router: Router) { }
 
   ngOnInit(): void {
-    console.log(localStorage.getItem('token'))
     const prompt_btn = document.getElementById('prompt-btn') as HTMLInputElement;
     const register_txt = document.getElementById('register-text') as HTMLInputElement;
     const register_btn = document.getElementById('register-btn') as HTMLInputElement;
@@ -38,7 +37,6 @@ export class PromptWindowComponent implements OnInit {
     }
   }
   ngAfterViewInit() {
-    console.log(localStorage.getItem('token'))
     const prompt_btn = document.getElementById('prompt-btn') as HTMLInputElement;
     const register_txt = document.getElementById('register-text') as HTMLInputElement;
     const register_btn = document.getElementById('register-btn') as HTMLInputElement;
@@ -62,7 +60,6 @@ export class PromptWindowComponent implements OnInit {
     const upscaleButton = document.getElementById('upscale-btn') as HTMLInputElement;
     upscaleButton.style.backgroundColor = '#3c3c3c';
 
-    console.log(localStorage.getItem('userfreegenerations'));
     if(localStorage.getItem('usergenerations') != "0"){
       usergenerations = Number(localStorage.getItem('usergenerations'));
     }else{
@@ -73,10 +70,8 @@ export class PromptWindowComponent implements OnInit {
       this.spinner.show();
       const deepai = require('deepai'); // OR include deepai.min.js as a script tag in your HTML
       deepai.setApiKey('dea3aaa7-6b55-4af5-862e-1835db355c0c');
-      console.log("LÄUFT!");
 
       const promptTxt = props.value;
-      console.log(promptTxt + this.promptExtender);
 
       var resp = await deepai.callStandardApi("fantasy-world-generator", {
               //image: fs.createReadStream('../../assets/img/characters/character_logo.png'),
@@ -85,19 +80,22 @@ export class PromptWindowComponent implements OnInit {
             });
 
             const promptImage = document.getElementById('prompt-image') as HTMLInputElement;
-            console.log(resp);
-            console.log(resp.output_url);
 
             promptImage.src = resp.output_url;
             this.spinner.hide();
-            this.subtractfreegeneration();
+
+            let usergenerations = localStorage.getItem('usergenerations');
+            if(Number(usergenerations) > 0){
+              this.subtractgeneration();
+            }else{              
+              this.subtractfreegeneration();
+            }
 
             const upscaleBtn = document.getElementById('upscale-btn') as HTMLInputElement;
             upscaleBtn.style.visibility = "visible";
             const downloadBtn = document.getElementById('download-btn') as HTMLInputElement;
             downloadBtn.style.visibility = "visible";
             }else{
-              console.log("No more generations available!");
             }
       } 
   }
@@ -111,17 +109,24 @@ subtractfreegeneration(){
     let count = 1;
 
 
-    console.log(userId);
 
     this.user.subtractfreegeneration(userId, count).subscribe(data=>{
       this.data = Object.values (data);
 
-      console.log(this.data)
-      localStorage.setItem('userfreegenerations', this.data[4]);
-          
+      localStorage.setItem('userfreegenerations', this.data[4]);          
     })
-
-
   }
 
+  subtractgeneration(){
+    const userId = localStorage.getItem('userid'); 
+    let count = 1;
+
+
+
+    this.user.subtractgeneration(userId, count).subscribe(data=>{
+      this.data = Object.values (data);
+
+      localStorage.setItem('usergenerations', this.data[5]);          
+    })
+  }
 }

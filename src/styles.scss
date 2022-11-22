@@ -114,7 +114,7 @@ $mobile-screen: 500px;
     border: 3px solid $text-color-red;
     border-radius: 12px;
     transition: 1ms;
-    cursor: pointer;
+    cursor: url("/../../assets/img/gauntlet1.cur"), auto;
     &:hover {
         background-color: $text-color-red;
         color: $textbox-color-parchment;
@@ -132,7 +132,7 @@ $mobile-screen: 500px;
     border: 3px solid #420b12;
     border-radius: 12px;
     transition: 1ms;
-    cursor: pointer;
+    cursor: url("/../../assets/img/gauntlet1.cur"), auto;
     transition: 0.7s;
     &:hover {
         background-color: $textbox-color-parchment;
@@ -151,7 +151,7 @@ $mobile-screen: 500px;
     border: 3px solid #0b5a8e;
     border-radius: 12px;
     transition: 1ms;
-    cursor: pointer;
+    cursor: url("/../../assets/img/gauntlet1.cur"), auto;
     transition: 0.7s;
     &:hover {
         background-color: $textbox-color-parchment;
@@ -171,7 +171,7 @@ $mobile-screen: 500px;
     border: 3px solid #1f1f1f;
     border-radius: 12px;
     transition: 1ms;
-    cursor: pointer;
+    cursor: url("/../../assets/img/gauntlet1.cur"), auto;
     transition: 0.7s;
     &:hover {
         background-color: $textbox-color-parchment;
@@ -237,8 +237,14 @@ body {
     margin: 0 auto;
     background-color: $body-color-2;
     font-family: dnd_fancy;
-}
+    overflow-y: scroll;
 
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+    /* make scrollbar transparent */
+}
 app-root {
     display: flex;
     flex-direction: column;

@@ -5,6 +5,7 @@ h1{
     color: rgb(120, 9, 9);
 }
 .prompt-window{
+    cursor: url("/../../assets/img/n5.cur"), default;
 
     height: 100%;
     margin-top: 10px;
@@ -52,6 +53,8 @@ h1{
 .prompt-btn{
     @include standardButtonRed();
     margin: 0 auto;
+    cursor: url("/../../assets/img/gauntlet1.cur"), auto;
+
 }
 .register-text{
     top: 50px;
@@ -64,6 +67,8 @@ h1{
     height: 50px;
     margin: 0 auto;
     visibility: hidden;
+    cursor: url("/../../assets/img/gauntlet1.cur"), auto;
+
 }
 @media only screen and (max-width: 700px) {
     .prompt-window{

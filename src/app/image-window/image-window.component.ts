@@ -15,7 +15,6 @@ export class ImageWindowComponent implements OnInit {
   }
 
   upscaleImage(imgprop: any){
-    console.log("HEnlo");
 
     //this.spinner.show();
 
@@ -23,7 +22,6 @@ export class ImageWindowComponent implements OnInit {
     deepai.setApiKey('dea3aaa7-6b55-4af5-862e-1835db355c0c');
 
     const imageUrl = imgprop.src;
-    console.log(imageUrl);
 
     (async function() {
       const upscaleLabel = document.getElementById('upscaleLabel') as HTMLInputElement;
@@ -36,11 +34,7 @@ export class ImageWindowComponent implements OnInit {
         var resp = await deepai.callStandardApi("torch-srgan", {
                 image: imageUrl,
         });
-        console.log(resp);
-        const promptImage = document.getElementById('prompt-image') as HTMLInputElement;
-        console.log(resp);
-        console.log(resp.output_url);
-      
+        const promptImage = document.getElementById('prompt-image') as HTMLInputElement;      
         promptImage.src = resp.output_url;
 
         //upscaleLabel.innerHTML = "Job done!";
@@ -50,26 +44,22 @@ export class ImageWindowComponent implements OnInit {
    
   }
 
-
-  downloadImage(imgprop: any){
-    console.log(imgprop);
-
+  downloadImage2(imgprop: any){
     const imageUrl = imgprop.src;
-    console.log(imageUrl);
 
-    fetch(imageUrl, {
-      mode : 'no-cors',
-    })
-      .then(response => response.blob())
-      .then(blob => {
-      let blobUrl = window.URL.createObjectURL(blob);
-      let a = document.createElement('a');
-      a.download = blobUrl.replace(/^.*[\\\/]/, '');
-      a.href = imageUrl;
-      a.target = "_blank";
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-    })
-  }
+    fetch(imageUrl)
+        .then(resp => resp.blob())
+        .then(blob => {
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            // the filename you want
+            a.download = "my-dm-generation.jpeg";
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+        })
+        .catch(() => alert('An error sorry'));
+      }
 }

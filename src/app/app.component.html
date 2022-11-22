@@ -1,9 +1,8 @@
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 
-
-<app-header></app-header>
-<main [@trigger]="prepareRoute(outlet)">
-    <router-outlet #outlet="outlet"></router-outlet>
-</main>
-<app-footer></app-footer>
-<!-- Secure Site Seal – DO NOT EDIT --><span id="s2b_siteseal" rel="comodo"><script type="text/javascript" src="//www.ssl2buy.com/siteseal.js"></script></span><!-- Secure Site Seal – DO NOT EDIT -->
+    <app-header></app-header>
+    <main>
+        <router-outlet #outlet="outlet"></router-outlet>
+    </main>
+    <app-footer></app-footer>
+    <!-- Secure Site Seal – DO NOT EDIT --><span id="s2b_siteseal" rel="comodo"><script type="text/javascript" src="//www.ssl2buy.com/siteseal.js"></script></span><!-- Secure Site Seal – DO NOT EDIT -->

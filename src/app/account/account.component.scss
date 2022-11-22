@@ -1,54 +1,67 @@
 @import "../../styles.scss";
 
 .main-window{
-    background-color: rgb(241, 233, 221);
+    cursor: url("/../../assets/img/n5.cur"), default;
+
+    background-color: rgb(230, 221, 211);
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     z-index: 999;
+    overflow-y: scroll;
+    @include transparentScrollbar();
 
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 2fr 2.5fr;
 }
 
 .image-window{
-    grid-column: 1;
-    background-image: url("../../assets/img/account_banner2_crop.png");
+    grid-column: 2;
+    background-image: url("../../assets/img/account/account_banner3.png");
+
 }
 
 .text-window{
-    grid-column: 2;
+    grid-column: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
+    h4{
+        margin-top: 0px;
+    }
     .logo{
-        height: 150px;
-        width: 400px;
+        width: 450px;
         top: 0;
+        margin-bottom: 20px;
     }
     .btn{
         @include standardButtonRed();
 
     }
     .container{
-        width: 40%; 
+        width: 70%;
         border: 2px solid  rgb(104, 7, 7);
-        background-color: $body-color-temp;
+        background-color: rgb(240, 238, 233);
         display: grid;
         grid-template-columns: 2fr 3fr;
         align-items: center;
         
         border-radius: 10px;
-        margin-top: 5px;
+        margin-top: 10px;
 
         .container-label{
             color: rgb(104, 7, 7);
             margin-left: 5px;
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
+    }
+
+    .paypal-button{
     }
 
     .pay-pal-success{
@@ -72,7 +85,6 @@
         grid-column: 1;
 
         .logo{
-            height: 120px;
             width: 350px;
             margin: 0 auto;
         }

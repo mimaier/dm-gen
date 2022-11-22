@@ -1,6 +1,8 @@
 @import "../../styles.scss";
 
 footer {
+    cursor: url("/../../assets/img/n5.cur"), default;
+
     background-color: $body-color-temp;
 
     #footer-content {
@@ -10,7 +12,7 @@ footer {
         padding: 2px 26px 2px 26px;
         background-color: $body-color-temp;
         background:
-        url("../../assets/img/home/footer.png") center top;
+        url("../../assets/img/footer/footer.png") center top;
         background-size: cover;
         margin: 0;
         position: relative;

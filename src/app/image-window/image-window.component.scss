@@ -1,6 +1,7 @@
 @import "../../styles.scss";
 
 .image-window{
+    cursor: url("/../../assets/img/n5.cur"), default;
 
     height: 100%;
     margin-top: 10px;
@@ -31,6 +32,7 @@
     }
 
     .upscale-button-main{
+        
         display: flex;
         flex-direction: column;
         justify-content: center;

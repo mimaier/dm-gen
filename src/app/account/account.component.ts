@@ -30,6 +30,11 @@ export class AccountComponent implements OnInit {
     }else{
       generationsLeft = Number(localStorage.getItem('userfreegenerations'));
     }
+    console.log(localStorage.getItem('userfreegenerations'));
+    console.log(localStorage.getItem('usergenerations'));
+
+    //Adding both token counts together!
+    generationsLeft = Number(localStorage.getItem('usergenerations')) + Number(localStorage.getItem('userfreegenerations'));
 
     const username = document.getElementById('username') as HTMLInputElement;
     const email = document.getElementById('email') as HTMLInputElement;
@@ -51,7 +56,6 @@ export class AccountComponent implements OnInit {
   loginUser(email:string, password:string){
     this.user.loginUser(email, password).subscribe(data=>{
       this.data = Object.values (data);
-      console.log(this.data)
       localStorage.setItem('username', this.data[0]);
       localStorage.setItem('usermail', this.data[0]);
       localStorage.setItem('token', this.data[0]);
@@ -59,7 +63,6 @@ export class AccountComponent implements OnInit {
       const logoutButton = document.getElementById('logoutbtn') as HTMLInputElement;
       const registerButton = document.getElementById('registerbutton') as HTMLInputElement;
 
-      console.log(accountButton);
       accountButton.style.display = "block";
       logoutButton.style.display = "block";
       registerButton.style.display = "none";
@@ -72,7 +75,6 @@ export class AccountComponent implements OnInit {
     this.user.registerUser(username, password, email).subscribe(data=>{
 
       this.data = Object.values (data);
-      console.log(this.data)
     })
   }
 
@@ -88,11 +90,11 @@ export class AccountComponent implements OnInit {
         {
           amount: {
             currency_code: 'EUR',
-            value: '3.00',
+            value: '0.50',
             breakdown: {
               item_total: {
                 currency_code: 'EUR',
-                value: '3.00'
+                value: '0.50'
               }
             }
           },
@@ -103,7 +105,7 @@ export class AccountComponent implements OnInit {
               category: 'DIGITAL_GOODS',
               unit_amount: {
                 currency_code: 'EUR',
-                value: '3.00',
+                value: '0.50',
               },
             }
           ]
@@ -132,14 +134,22 @@ export class AccountComponent implements OnInit {
       pay_pal_success.style.color = "#265233";
 
       this.showSuccess = true;
-      this.addfreegeneration();
+      this.addgeneration();
 
     },
     onCancel: (data, actions) => {
       console.log('OnCancel', data, actions);
+      const pay_pal_success = document.getElementById('pay-pal-success') as HTMLInputElement;
+      pay_pal_success.style.visibility = "visible";
+      pay_pal_success.innerHTML = "Payment was not successful!"
+      pay_pal_success.style.color = "#eb4034";
     },
     onError: err => {
       console.log('OnError', err);
+      const pay_pal_success = document.getElementById('pay-pal-success') as HTMLInputElement;
+      pay_pal_success.style.visibility = "visible";
+      pay_pal_success.innerHTML = "Payment was not successful!"
+      pay_pal_success.style.color = "#eb4034";
     },
     onClick: (data, actions) => {
       console.log('onClick', data, actions);
@@ -149,27 +159,24 @@ export class AccountComponent implements OnInit {
 
   }
 
-  addfreegeneration(){
+  addgeneration(){
     const userId = localStorage.getItem('userid'); 
     let count = 250;
 
-
-    console.log(userId);
-
-    this.user.addfreegeneration(userId, count).subscribe(data=>{
+    this.user.addgeneration(userId, count).subscribe(data=>{
       this.data = Object.values (data);
-
-      console.log(this.data)
-      localStorage.setItem('userfreegenerations', this.data[4]);
+      console.log(this.data);
+      localStorage.setItem('usergenerations', this.data[5]);
       const generations = document.getElementById('generations') as HTMLInputElement;
-      console.log();
       let current_generation = Number(generations.innerHTML);
+      console.log(generations);
       console.log(current_generation);
 
       current_generation = current_generation + 250;
-      console.log(current_generation);
 
       generations.innerHTML = current_generation.toString();
+      console.log(generations.innerHTML);
+
     })
 
 

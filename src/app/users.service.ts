@@ -16,30 +16,36 @@ export class UsersService {
   }
 
   subtractfreegeneration(userid: string | null, count: number){
-    console.log("Henlo in service function!");
-    console.log("https://dm-gen.com/api/v1/users/subtractfreegeneration/"+userid+"&"+count);
 
     let url="https://dm-gen.com/api/v1/users/subtractfreegeneration/"+userid+"&"+count;
     return this.http.put(url, {
     })
   }
 
+  subtractgeneration(userid: string | null, count: number){
+    let url="https://dm-gen.com/api/v1/users/subtractgeneration/"+userid+"&"+count;
+    return this.http.put(url, {
+    })
+  }
+
 //ADD Tokens AFTER PAYMENT!
 addfreegeneration(userid: string | null, count: number){
-  console.log("Henlo in service function!");
-  console.log("https://dm-gen.com/api/v1/users/addfreegeneration/"+userid+"&"+count);
 
   let url="https://dm-gen.com/api/v1/users/addfreegeneration/"+userid+"&"+count;
   return this.http.put(url, {
   })
 }
+addgeneration(userid: string | null, count: number){
 
+  let url="https://dm-gen.com/api/v1/users/addgeneration/"+userid+"&"+count;
+  return this.http.put(url, {
+  })
+}
 
 //----------------------------------------------------------------
 
 
   loginUser(email: string, password: string ){
-    console.log("in login function frontend")
     let url="https://dm-gen.com/api/v1/users/login";
     return this.http.post(url, {
       "email": email,
@@ -47,7 +53,6 @@ addfreegeneration(userid: string | null, count: number){
     })
   }
   specialLoginUser(email: string, password: string ){
-    console.log("in login function frontend")
     let url="https://dm-gen.com/api/v1/users/speciallogin";
     return this.http.post(url, {
       "email": email,

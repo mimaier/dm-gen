@@ -5,6 +5,8 @@
 }
 
 .sidebar {
+    cursor: url("/../../assets/img/n5.cur"), default;
+
     position: fixed;
     width: 100px;
     height: 100%;
@@ -28,6 +30,8 @@
         }
 
         .sidebar_btn {
+            cursor: url("/../../assets/img/gauntlet1.cur"), auto;
+
             color: $body-color-temp;
             display: flex;
             justify-content: center;

@@ -17,11 +17,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(localStorage.getItem('token'))
     if(localStorage.getItem('token') != null) {
       const card_window = document.getElementById('card-window') as HTMLInputElement;
       const register_text = document.getElementById('register-text') as HTMLInputElement;
-      console.log(card_window);
       //register_text.style.display = "none !important";
       //card_window.style.display = "flex";
     }else{

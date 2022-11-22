@@ -1,5 +1,9 @@
 @import "../../styles.scss";
 
+.main{
+    cursor: url("/../../assets/img/n5.cur"), default;
+}
+
 .mainWindow{
     display: flex;
     flex-direction: column;
@@ -26,7 +30,7 @@
     background-color: #1b1b1b;
     //border: 3px solid $text-color-red;
     background: 
-            url("../../assets/img/home/Dragonfight_deskt_blk3.png") center top;
+            url("../../assets/img/home/Dragonflight.png") center top;
             background-size: cover;
 }
 
@@ -37,6 +41,8 @@
     width: 200px;
     height: 50px;
     margin-top: 40px;
+    cursor: url("/../../assets/img/gauntlet1.cur"), auto;
+
 }
 .text-wrap{
     padding-top: 20px;
@@ -62,7 +68,7 @@
         max-width: 500px;
 
         .card-img{
-            cursor: pointer;
+            cursor: url("/../../assets/img/gauntlet1.cur"), auto;
             border-radius: 10px;
             width: 100%;
             box-shadow: 7px 5px 5px rgb(24, 24, 24);
@@ -72,7 +78,7 @@
         .card_txt{
             box-shadow: 7px 5px 5px rgb(28, 28, 28);
 
-            cursor: pointer;
+            cursor: url("/../../assets/img/gauntlet1.cur"), auto;
             border-radius: 10px;
             text-align: center;
             height: 30px;
