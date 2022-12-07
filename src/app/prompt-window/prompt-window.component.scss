@@ -13,7 +13,7 @@ h1{
 
     border: 5px solid $body-color-logo;
     background-color: $body-color-temp;
-    background-image: url("../../assets/img/module_bg_opaque.png");
+    background-image: url("../../assets/img/module_bg_opaque2.jpg");
     border-radius: 10px;
     background-position: center;
 }
@@ -61,6 +61,12 @@ h1{
     text-align: center;
     color: rgb(120, 9, 9);
 }
+.empty-text{
+  top: 50px;
+  text-align: center;
+  color: rgb(120, 9, 9);
+  visibility: hidden;
+}
 .register-btn {
     @include standardButtonBlue();
     width: 200px;
@@ -80,3 +86,42 @@ h1{
         margin-bottom: 60px;
     }
 }
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 5px;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid rgb(95, 7, 7);
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: rgb(73, 7, 7) transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

@@ -9,6 +9,7 @@ import { ItemsComponent } from './items/items.component'
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AccountComponent } from './account/account.component';
 import { ActivateYourAccountComponent } from './activate-your-account/activate-your-account.component';
+import { ImpressumComponent } from './impressum/impressum.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: {}},
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent, data: {}},
   { path: 'account', component: AccountComponent, data: {}},
   { path: 'activate-your-account', component: ActivateYourAccountComponent, data: {}},
+  { path: 'impressum', component: ImpressumComponent, data: {}},
 
 
   

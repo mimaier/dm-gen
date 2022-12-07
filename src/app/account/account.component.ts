@@ -90,11 +90,11 @@ export class AccountComponent implements OnInit {
         {
           amount: {
             currency_code: 'EUR',
-            value: '0.50',
+            value: '2.00',
             breakdown: {
               item_total: {
                 currency_code: 'EUR',
-                value: '0.50'
+                value: '2.00'
               }
             }
           },
@@ -105,7 +105,7 @@ export class AccountComponent implements OnInit {
               category: 'DIGITAL_GOODS',
               unit_amount: {
                 currency_code: 'EUR',
-                value: '0.50',
+                value: '2.00',
               },
             }
           ]

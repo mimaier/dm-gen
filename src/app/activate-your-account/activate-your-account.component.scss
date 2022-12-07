@@ -24,7 +24,7 @@
 }
 .image-window{
     grid-column: 1;
-    background-image: url("../../assets/img/signup/signup_banner.png");
+    background-image: url("../../assets/img/signup/signup_banner.jpg");
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -107,7 +107,7 @@
         
     }
     .btn{
-        @include standardButtonRed();
+        @include standardButtonBlue();
 
     }
 

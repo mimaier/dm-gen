@@ -1,10 +1,13 @@
 <div class="prompt-window">
     <form class="prompt-form" #props="ngForm" (ngSubmit)="sendToApi(txtprop)">
         <h1>{{pageTitle}}</h1>
+
         <input type="text" class="prompt-txtbox" placeholder={{placeHolder}} name="prompttxtbox" ngModel #txtprop>
         <button class="prompt-btn" id="prompt-btn">Generate</button>
+        <div class="lds-ring" id="lds-ring" style="visibility: hidden"><div></div><div></div><div></div><div></div></div>
+        <h2 class="empty-text" id="empty-text">You have no tokens left. <br>To stock up, just visit your account page.</h2>
+
         <h2 class="register-text" id="register-text">Register for Free and start generating!</h2>
         <button class="register-btn" id="register-btn" (click)="navigateToPage('/sign-up')">Sign-up or Login</button>
-
     </form>
 </div>

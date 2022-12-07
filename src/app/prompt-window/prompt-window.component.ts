@@ -1,5 +1,4 @@
 import { Component, OnInit, ElementRef, Input } from '@angular/core';
-import { NgxSpinnerService } from "ngx-spinner";
 import {UsersService} from '../users.service';
 import { Router } from '@angular/router';
 
@@ -17,26 +16,12 @@ export class PromptWindowComponent implements OnInit {
   @Input() public placeHolder: string = "";
   data:any;
 
-  constructor(private ElByClassName: ElementRef, private spinner: NgxSpinnerService,  private user: UsersService,private router: Router) { }
+  constructor(private ElByClassName: ElementRef, private user: UsersService,private router: Router) { }
 
   ngOnInit(): void {
-    const prompt_btn = document.getElementById('prompt-btn') as HTMLInputElement;
-    const register_txt = document.getElementById('register-text') as HTMLInputElement;
-    const register_btn = document.getElementById('register-btn') as HTMLInputElement;
-
-    if(localStorage.getItem('token') != null) {
-      prompt_btn.style.visibility = "visible";
-      register_txt.style.visibility = "hidden";
-      register_btn.style.visibility = "hidden";
-
-    }else{
-      prompt_btn.style.visibility = "hidden";
-      register_txt.style.visibility = "visible";
-      register_btn.style.visibility = "visible";
-
-    }
+    
   }
-  ngAfterViewInit() {
+  ngAfterContentChecked() {
     const prompt_btn = document.getElementById('prompt-btn') as HTMLInputElement;
     const register_txt = document.getElementById('register-text') as HTMLInputElement;
     const register_btn = document.getElementById('register-btn') as HTMLInputElement;
@@ -58,7 +43,10 @@ export class PromptWindowComponent implements OnInit {
     //localStorage.setItem('userfreegenerations', "3"); // ---------- for Testing!!
 
     const upscaleButton = document.getElementById('upscale-btn') as HTMLInputElement;
+    const empty_txt = document.getElementById('empty-text') as HTMLInputElement;
+
     upscaleButton.style.backgroundColor = '#3c3c3c';
+    empty_txt.style.visibility = "hidden";
 
     if(localStorage.getItem('usergenerations') != "0"){
       usergenerations = Number(localStorage.getItem('usergenerations'));
@@ -67,7 +55,11 @@ export class PromptWindowComponent implements OnInit {
     }
     if(usergenerations > 0){
       if(localStorage.getItem('token') != null) {
-      this.spinner.show();
+        const spinner = document.getElementById('lds-ring') as HTMLInputElement;
+        spinner.style.visibility = "visible";
+// LOAD START
+
+
       const deepai = require('deepai'); // OR include deepai.min.js as a script tag in your HTML
       deepai.setApiKey('dea3aaa7-6b55-4af5-862e-1835db355c0c');
 
@@ -82,7 +74,7 @@ export class PromptWindowComponent implements OnInit {
             const promptImage = document.getElementById('prompt-image') as HTMLInputElement;
 
             promptImage.src = resp.output_url;
-            this.spinner.hide();
+
 
             let usergenerations = localStorage.getItem('usergenerations');
             if(Number(usergenerations) > 0){
@@ -95,8 +87,13 @@ export class PromptWindowComponent implements OnInit {
             upscaleBtn.style.visibility = "visible";
             const downloadBtn = document.getElementById('download-btn') as HTMLInputElement;
             downloadBtn.style.visibility = "visible";
+
+            spinner.style.visibility = "hidden";
+
             }else{
             }
+      }else{
+        empty_txt.style.visibility = "visible";
       } 
   }
 
