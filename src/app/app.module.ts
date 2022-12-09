@@ -24,6 +24,7 @@ import { NgxPayPalModule} from 'ngx-paypal';
 import { ActivateYourAccountComponent } from './activate-your-account/activate-your-account.component';
 import { ImpressumComponent } from './impressum/impressum.component';
 import { AboutComponent } from './about/about.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 interface NgxSpinnerConfig {
   type?: string;
@@ -46,6 +47,7 @@ interface NgxSpinnerConfig {
     ActivateYourAccountComponent,
     ImpressumComponent,
     AboutComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,

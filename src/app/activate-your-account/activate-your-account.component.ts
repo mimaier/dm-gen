@@ -22,6 +22,27 @@ export class ActivateYourAccountComponent implements OnInit {
   refresh(): void {
     window.location.reload();
   }
+
+  forgotPassword(email:string){
+    const noMail = document.getElementById('forgot-pw-no-mail') as HTMLInputElement;
+    const forgotSuccess = document.getElementById('forgot-pw-success') as HTMLInputElement;
+
+    if(email == "" || email.includes("@") == false){
+      noMail.style.visibility = "visible";
+      forgotSuccess.style.visibility = "hidden";
+
+    }else{
+      this.user.forgotPWUser(email).subscribe(data=>{
+        //this.data = Object.values (data);
+        forgotSuccess.style.visibility = "visible";
+        noMail.style.visibility = "hidden";
+  
+       // this.loginUser(email, password);
+      })
+    }
+    console.log(email);
+  }
+
   specialLoginUser(email:string, password:string){
     const signInSuccessLabel = document.getElementById('sign-in-success') as HTMLInputElement;
     if(email.includes("@") == false){

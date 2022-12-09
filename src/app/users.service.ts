@@ -27,7 +27,13 @@ export class UsersService {
     return this.http.put(url, {
     })
   }
-
+  changePassword(email: string | null, password: string){
+    let url="https://dm-gen.com/api/v1/users/change-password/"+email;
+    return this.http.put(url, {
+      "email": email,
+      "password": password
+    })
+  }
 //ADD Tokens AFTER PAYMENT!
 addfreegeneration(userid: string | null, count: number){
 
@@ -52,6 +58,7 @@ addgeneration(userid: string | null, count: number){
       "password": password,
     })
   }
+
   specialLoginUser(email: string, password: string ){
     let url="https://dm-gen.com/api/v1/users/speciallogin";
     return this.http.post(url, {
@@ -59,6 +66,14 @@ addgeneration(userid: string | null, count: number){
       "password": password,
     })
   }
+
+  forgotPWUser(email: string){
+    let url="https://dm-gen.com/api/v1/users/forgot-password";
+    return this.http.post(url, {
+      "email": email,
+    })
+  }
+
   registerUser(username: string, password: string, email: string){
     let url="https://dm-gen.com/api/v1/users/register";
     return this.http.post(url, {

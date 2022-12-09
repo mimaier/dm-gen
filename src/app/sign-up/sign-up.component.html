@@ -19,7 +19,10 @@
                   <input type="email"  class="sign-up-txtbox email_textbox" id="emailtxt" placeholder="john@dough.at" name="email_textbox" ngModel #emailprop>
                   <br><br><br>
                   <button class="sign-up-btn btn">Sign Up</button>
-                </form>   
+                </form>  
+
+                
+
                 <label class="sign-up-success" id="sign-up-success">Successfully signed up! </label>        
             </div>
         </div>       
@@ -40,6 +43,10 @@
                 <br>   <br>  
                 <button class="sign-in-btn btn">Sign in</button>
             </form>
+            <button class="forgot-pw-btn" (click)="forgotPassword(emailpropsignin.value)">Forgot Password?</button>
+            <label class="forgot-pw-no-mail" id="forgot-pw-no-mail">Please enter your email</label>
+            <label class="forgot-pw-success" id="forgot-pw-success">An email has been sent to you</label>
+
             <label class="sign-in-success" id="sign-in-success">Successfully signed in! </label>     
 
             </div>

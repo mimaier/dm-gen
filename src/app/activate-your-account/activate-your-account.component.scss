@@ -115,6 +115,21 @@
         @include standardButtonRed();
     }
 
+    .forgot-pw-btn{
+        @include standardButtonGrey();
+        height: 27px;
+        font-size: 12px;
+    }
+    .forgot-pw-no-mail{
+        color: red;
+        font-weight: bold;
+        visibility: hidden;
+    }
+    .forgot-pw-success{
+        color: green;
+        font-weight: bold;
+        visibility: hidden;
+    }
    
 } 
 .sign-up-form{
